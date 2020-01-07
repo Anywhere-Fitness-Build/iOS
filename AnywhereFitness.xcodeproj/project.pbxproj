@@ -7,10 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+
+		BB17E78823C3B0EA0089EE9F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB17E78723C3B0EA0089EE9F /* User.swift */; };
+		BB17E79A23C3E3210089EE9F /* WalkthroughViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB17E79923C3E3210089EE9F /* WalkthroughViewController.swift */; };
+		BB17E79C23C3E34B0089EE9F /* WalkthroughPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB17E79B23C3E34B0089EE9F /* WalkthroughPageViewController.swift */; };
+		BB17E7A323C3E4C10089EE9F /* WalkthroughPageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB17E7A223C3E4C10089EE9F /* WalkthroughPageModel.swift */; };
+		BB17E7A523C3E5AC0089EE9F /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB17E7A423C3E5AC0089EE9F /* OnboardingViewController.swift */; };
+		BB17E7A923C3ECFD0089EE9F /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB17E7A623C3ECFC0089EE9F /* UIImage.swift */; };
+		BB17E7AA23C3ECFD0089EE9F /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB17E7A723C3ECFD0089EE9F /* UIViewController.swift */; };
+		BB17E7AB23C3ECFD0089EE9F /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB17E7A823C3ECFD0089EE9F /* UIColor.swift */; };
+		BB17E7AD23C3ED7F0089EE9F /* WalkthroughPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB17E7AC23C3ED7F0089EE9F /* WalkthroughPageViewController.xib */; };
+		BB17E7AF23C3ED8F0089EE9F /* WalkthroughViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB17E7AE23C3ED8F0089EE9F /* WalkthroughViewController.xib */; };
+		BB17E7B323C4096F0089EE9F /* Launch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB17E7B223C4096F0089EE9F /* Launch.storyboard */; };
+		BB17E7B523C414620089EE9F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB17E7B423C414620089EE9F /* LoginViewController.swift */; };
+
 		FB565C5F23C3CD8B00F8DE18 /* UserRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB565C5E23C3CD8B00F8DE18 /* UserRepresentation.swift */; };
 		FB565C6123C3CEBB00F8DE18 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB565C6023C3CEBB00F8DE18 /* CoreDataStack.swift */; };
 		FB565C6523C3D5AB00F8DE18 /* FitnessClassRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB565C6423C3D5AB00F8DE18 /* FitnessClassRepresentation.swift */; };
 		FB565C6723C3D64E00F8DE18 /* Class+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB565C6623C3D64E00F8DE18 /* Class+Convenience.swift */; };
+
 		FB85331823C3AD0F0080F651 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB85331723C3AD0F0080F651 /* AppDelegate.swift */; };
 		FB85331A23C3AD0F0080F651 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB85331923C3AD0F0080F651 /* SceneDelegate.swift */; };
 		FB85331C23C3AD0F0080F651 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB85331B23C3AD0F0080F651 /* ViewController.swift */; };
@@ -22,10 +37,25 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+
+		BB17E78723C3B0EA0089EE9F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		BB17E79923C3E3210089EE9F /* WalkthroughViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughViewController.swift; sourceTree = "<group>"; };
+		BB17E79B23C3E34B0089EE9F /* WalkthroughPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughPageViewController.swift; sourceTree = "<group>"; };
+		BB17E7A223C3E4C10089EE9F /* WalkthroughPageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughPageModel.swift; sourceTree = "<group>"; };
+		BB17E7A423C3E5AC0089EE9F /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		BB17E7A623C3ECFC0089EE9F /* UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
+		BB17E7A723C3ECFD0089EE9F /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		BB17E7A823C3ECFD0089EE9F /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		BB17E7AC23C3ED7F0089EE9F /* WalkthroughPageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WalkthroughPageViewController.xib; sourceTree = "<group>"; };
+		BB17E7AE23C3ED8F0089EE9F /* WalkthroughViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WalkthroughViewController.xib; sourceTree = "<group>"; };
+		BB17E7B223C4096F0089EE9F /* Launch.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Launch.storyboard; sourceTree = "<group>"; };
+		BB17E7B423C414620089EE9F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+
 		FB565C5E23C3CD8B00F8DE18 /* UserRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepresentation.swift; sourceTree = "<group>"; };
 		FB565C6023C3CEBB00F8DE18 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		FB565C6423C3D5AB00F8DE18 /* FitnessClassRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitnessClassRepresentation.swift; sourceTree = "<group>"; };
 		FB565C6623C3D64E00F8DE18 /* Class+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Class+Convenience.swift"; sourceTree = "<group>"; };
+
 		FB85331423C3AD0F0080F651 /* AnywhereFitness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnywhereFitness.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB85331723C3AD0F0080F651 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FB85331923C3AD0F0080F651 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +79,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+
+		BB17E79123C3DF160089EE9F /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				BB17E7A823C3ECFD0089EE9F /* UIColor.swift */,
+				BB17E7A623C3ECFC0089EE9F /* UIImage.swift */,
+				BB17E7A723C3ECFD0089EE9F /* UIViewController.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		BB17E79823C3E26F0089EE9F /* Onboarding View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				BB17E79923C3E3210089EE9F /* WalkthroughViewController.swift */,
+				BB17E7AE23C3ED8F0089EE9F /* WalkthroughViewController.xib */,
+				BB17E79B23C3E34B0089EE9F /* WalkthroughPageViewController.swift */,
+				BB17E7AC23C3ED7F0089EE9F /* WalkthroughPageViewController.xib */,
+			);
+			path = "Onboarding View Controllers";
+			sourceTree = "<group>";
+		};
+		BB17E7A123C3E4AD0089EE9F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BB17E7A223C3E4C10089EE9F /* WalkthroughPageModel.swift */,
+
 		FB565C6223C3D4EF00F8DE18 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
@@ -65,6 +122,7 @@
 			children = (
 				FB565C6423C3D5AB00F8DE18 /* FitnessClassRepresentation.swift */,
 				FB565C5E23C3CD8B00F8DE18 /* UserRepresentation.swift */,
+
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -88,15 +146,25 @@
 		FB85331623C3AD0F0080F651 /* AnywhereFitness */ = {
 			isa = PBXGroup;
 			children = (
+				BB17E7A123C3E4AD0089EE9F /* Models */,
+				BB17E79823C3E26F0089EE9F /* Onboarding View Controllers */,
+				BB17E79123C3DF160089EE9F /* Helpers */,
 				FB85331723C3AD0F0080F651 /* AppDelegate.swift */,
 				FB85331923C3AD0F0080F651 /* SceneDelegate.swift */,
 				FB565C6223C3D4EF00F8DE18 /* CoreData */,
 				FB85331B23C3AD0F0080F651 /* ViewController.swift */,
 				FB85331D23C3AD0F0080F651 /* Main.storyboard */,
+
+				BB17E7B223C4096F0089EE9F /* Launch.storyboard */,
+				BB17E7B423C414620089EE9F /* LoginViewController.swift */,
+
 				FB565C6323C3D50B00F8DE18 /* Models */,
+
 				FB85332023C3AD130080F651 /* Assets.xcassets */,
 				FB85332223C3AD130080F651 /* LaunchScreen.storyboard */,
 				FB85332523C3AD130080F651 /* Info.plist */,
+				BB17E78723C3B0EA0089EE9F /* User.swift */,
+				BB17E7A423C3E5AC0089EE9F /* OnboardingViewController.swift */,
 			);
 			path = AnywhereFitness;
 			sourceTree = "<group>";
@@ -160,8 +228,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				FB85332423C3AD130080F651 /* LaunchScreen.storyboard in Resources */,
+				BB17E7AF23C3ED8F0089EE9F /* WalkthroughViewController.xib in Resources */,
+				BB17E7AD23C3ED7F0089EE9F /* WalkthroughPageViewController.xib in Resources */,
 				FB85332123C3AD130080F651 /* Assets.xcassets in Resources */,
 				FB85331F23C3AD0F0080F651 /* Main.storyboard in Resources */,
+				BB17E7B323C4096F0089EE9F /* Launch.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -172,15 +243,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+
+				BB17E7B523C414620089EE9F /* LoginViewController.swift in Sources */,
+				BB17E78823C3B0EA0089EE9F /* User.swift in Sources */,
+				BB17E79A23C3E3210089EE9F /* WalkthroughViewController.swift in Sources */,
+				BB17E79C23C3E34B0089EE9F /* WalkthroughPageViewController.swift in Sources */,
+				FB85331C23C3AD0F0080F651 /* ViewController.swift in Sources */,
+				BB17E7AA23C3ECFD0089EE9F /* UIViewController.swift in Sources */,
+				BB17E7A323C3E4C10089EE9F /* WalkthroughPageModel.swift in Sources */,
+
 				FB565C6123C3CEBB00F8DE18 /* CoreDataStack.swift in Sources */,
 				FB85331C23C3AD0F0080F651 /* ViewController.swift in Sources */,
 				FB565C5F23C3CD8B00F8DE18 /* UserRepresentation.swift in Sources */,
+
 				FB85331823C3AD0F0080F651 /* AppDelegate.swift in Sources */,
+				BB17E7AB23C3ECFD0089EE9F /* UIColor.swift in Sources */,
+				BB17E7A923C3ECFD0089EE9F /* UIImage.swift in Sources */,
 				FB85331A23C3AD0F0080F651 /* SceneDelegate.swift in Sources */,
+
+				BB17E7A523C3E5AC0089EE9F /* OnboardingViewController.swift in Sources */,
+
 				FB565C6523C3D5AB00F8DE18 /* FitnessClassRepresentation.swift in Sources */,
 				FB85332D23C3C0AF0080F651 /* AnywhereFitness.xcdatamodeld in Sources */,
 				FB85332F23C3C9690080F651 /* User+Convenience.swift in Sources */,
 				FB565C6723C3D64E00F8DE18 /* Class+Convenience.swift in Sources */,
+
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
