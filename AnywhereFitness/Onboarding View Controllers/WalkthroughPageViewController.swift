@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol WalkthroughPageViewControllerDelegate: class {
+    func walkthroughSkipButtonWasPressed()
+}
+
 class WalkthroughPageViewController: UIViewController {
     @IBOutlet var containerView: UIView!
     @IBOutlet var imageContainerView: UIView!
@@ -17,7 +21,8 @@ class WalkthroughPageViewController: UIViewController {
     @IBOutlet var skipButton: UIButton!
     
     let model: WalkthroughModel
-    
+    weak var walkthroughPageDelegate: WalkthroughPageViewControllerDelegate?
+
     init(model: WalkthroughModel,
          nibName nibNameOrNil: String?,
          bundle nibBundleOrNil: Bundle?) {
@@ -49,6 +54,6 @@ class WalkthroughPageViewController: UIViewController {
     }
 
     @IBAction func skipTapped(sender: UIButton) {
-        
+        self.walkthroughPageDelegate?.walkthroughSkipButtonWasPressed()
     }
 }

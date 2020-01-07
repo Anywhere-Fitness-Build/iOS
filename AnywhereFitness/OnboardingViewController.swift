@@ -25,11 +25,7 @@ class OnboardingViewController: UIViewController, WalkthroughViewControllerDeleg
     }
 
     func walkthroughViewControllerDidFinishFlow(_ vc: WalkthroughViewController) {
-        UIView.transition(with: self.view, duration: 1, options: .transitionFlipFromLeft, animations: {
-            vc.view.removeFromSuperview()
-            let viewControllerToBePresented = UIViewController()
-            self.view.addSubview(viewControllerToBePresented.view)
-        }, completion: nil)
+        onboardingSkipOrLastPageTransition(vc)
     }
 
     fileprivate func walkthroughVC() -> WalkthroughViewController {
@@ -37,6 +33,18 @@ class OnboardingViewController: UIViewController, WalkthroughViewControllerDeleg
         return WalkthroughViewController(nibName: "WalkthroughViewController",
                                             bundle: nil,
                                             viewControllers: viewControllers)
+    }
+
+    private func onboardingSkipOrLastPageTransition(_ viewController: UIViewController) {
+        UIView.transition(with: self.view, duration: 1, options: .transitionFlipFromLeft, animations: {
+            viewController.view.removeFromSuperview()
+
+            let storyboard = UIStoryboard(name: "Launch", bundle: nil)
+            let viewControllerToBePresented = storyboard.instantiateViewController(withIdentifier: "LoginViewController")
+            self.addChildViewControllerWithView(viewControllerToBePresented)
+            self.view.addSubview(viewControllerToBePresented.view)
+
+        }, completion: nil)
     }
 }
 

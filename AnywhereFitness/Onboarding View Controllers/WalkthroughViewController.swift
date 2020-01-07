@@ -12,19 +12,20 @@ protocol WalkthroughViewControllerDelegate: class {
     func walkthroughViewControllerDidFinishFlow(_ vc: WalkthroughViewController)
 }
 
-class WalkthroughViewController: UIViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate {
+class WalkthroughViewController: UIViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate, WalkthroughPageViewControllerDelegate {
+
     @IBOutlet var pageControl: UIPageControl!
 
     weak var delegate: WalkthroughViewControllerDelegate?
 
-    let viewControllers: [UIViewController]
+    let viewControllers: [WalkthroughPageViewController]
     var pageIndex = 0
     let pageController: UIPageViewController
     let fakeVC: UIViewController
 
     init(nibName nibNameOrNil: String?,
          bundle nibBundleOrNil: Bundle?,
-         viewControllers: [UIViewController]) {
+         viewControllers: [WalkthroughPageViewController]) {
         self.viewControllers = viewControllers
         self.pageController = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
         self.fakeVC = UIViewController()
@@ -38,6 +39,9 @@ class WalkthroughViewController: UIViewController, UIPageViewControllerDataSourc
     }
 
     override func viewDidLoad() {
+        for i in 0..<viewControllers.count {
+            viewControllers[i].walkthroughPageDelegate = self
+        }
         pageController.setViewControllers([viewControllers[0]], direction: .forward, animated: true, completion: nil)
         self.addChildViewControllerWithView(pageController)
         pageControl.numberOfPages = viewControllers.count
@@ -45,6 +49,12 @@ class WalkthroughViewController: UIViewController, UIPageViewControllerDataSourc
         super.viewDidLoad()
     }
 
+    func walkthroughSkipButtonWasPressed() {
+        self.removeChildViewController(self.pageController)
+        self.delegate?.walkthroughViewControllerDidFinishFlow(self)
+    }
+
+    // MARK: - PageViewController Functions
     public func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         if let index = self.index(of: viewController) {
             if index == 0 {

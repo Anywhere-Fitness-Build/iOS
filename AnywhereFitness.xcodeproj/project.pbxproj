@@ -18,6 +18,7 @@
 		BB17E7AD23C3ED7F0089EE9F /* WalkthroughPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB17E7AC23C3ED7F0089EE9F /* WalkthroughPageViewController.xib */; };
 		BB17E7AF23C3ED8F0089EE9F /* WalkthroughViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB17E7AE23C3ED8F0089EE9F /* WalkthroughViewController.xib */; };
 		BB17E7B323C4096F0089EE9F /* Launch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB17E7B223C4096F0089EE9F /* Launch.storyboard */; };
+		BB17E7B523C414620089EE9F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB17E7B423C414620089EE9F /* LoginViewController.swift */; };
 		FB85331823C3AD0F0080F651 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB85331723C3AD0F0080F651 /* AppDelegate.swift */; };
 		FB85331A23C3AD0F0080F651 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB85331923C3AD0F0080F651 /* SceneDelegate.swift */; };
 		FB85331C23C3AD0F0080F651 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB85331B23C3AD0F0080F651 /* ViewController.swift */; };
@@ -38,6 +39,7 @@
 		BB17E7AC23C3ED7F0089EE9F /* WalkthroughPageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WalkthroughPageViewController.xib; sourceTree = "<group>"; };
 		BB17E7AE23C3ED8F0089EE9F /* WalkthroughViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WalkthroughViewController.xib; sourceTree = "<group>"; };
 		BB17E7B223C4096F0089EE9F /* Launch.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Launch.storyboard; sourceTree = "<group>"; };
+		BB17E7B423C414620089EE9F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		FB85331423C3AD0F0080F651 /* AnywhereFitness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnywhereFitness.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB85331723C3AD0F0080F651 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FB85331923C3AD0F0080F651 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 				FB85331B23C3AD0F0080F651 /* ViewController.swift */,
 				FB85331D23C3AD0F0080F651 /* Main.storyboard */,
 				BB17E7B223C4096F0089EE9F /* Launch.storyboard */,
+				BB17E7B423C414620089EE9F /* LoginViewController.swift */,
 				FB85332023C3AD130080F651 /* Assets.xcassets */,
 				FB85332223C3AD130080F651 /* LaunchScreen.storyboard */,
 				FB85332523C3AD130080F651 /* Info.plist */,
@@ -198,6 +201,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB17E7B523C414620089EE9F /* LoginViewController.swift in Sources */,
 				BB17E78823C3B0EA0089EE9F /* User.swift in Sources */,
 				BB17E79A23C3E3210089EE9F /* WalkthroughViewController.swift in Sources */,
 				BB17E79C23C3E34B0089EE9F /* WalkthroughPageViewController.swift in Sources */,

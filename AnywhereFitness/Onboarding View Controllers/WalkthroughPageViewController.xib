@@ -84,6 +84,9 @@
                     <state key="normal" title="Skip">
                         <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                     </state>
+                    <connections>
+                        <action selector="skipTappedWithSender:" destination="-1" eventType="touchUpInside" id="M5V-oW-Yp1"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
