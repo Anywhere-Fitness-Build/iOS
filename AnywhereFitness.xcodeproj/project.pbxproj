@@ -7,15 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FB565C5F23C3CD8B00F8DE18 /* UserRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB565C5E23C3CD8B00F8DE18 /* UserRepresentation.swift */; };
+		FB565C6123C3CEBB00F8DE18 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB565C6023C3CEBB00F8DE18 /* CoreDataStack.swift */; };
+		FB565C6523C3D5AB00F8DE18 /* FitnessClassRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB565C6423C3D5AB00F8DE18 /* FitnessClassRepresentation.swift */; };
+		FB565C6723C3D64E00F8DE18 /* Class+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB565C6623C3D64E00F8DE18 /* Class+Convenience.swift */; };
 		FB85331823C3AD0F0080F651 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB85331723C3AD0F0080F651 /* AppDelegate.swift */; };
 		FB85331A23C3AD0F0080F651 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB85331923C3AD0F0080F651 /* SceneDelegate.swift */; };
 		FB85331C23C3AD0F0080F651 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB85331B23C3AD0F0080F651 /* ViewController.swift */; };
 		FB85331F23C3AD0F0080F651 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB85331D23C3AD0F0080F651 /* Main.storyboard */; };
 		FB85332123C3AD130080F651 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB85332023C3AD130080F651 /* Assets.xcassets */; };
 		FB85332423C3AD130080F651 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB85332223C3AD130080F651 /* LaunchScreen.storyboard */; };
+		FB85332D23C3C0AF0080F651 /* AnywhereFitness.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FB85332B23C3C0AF0080F651 /* AnywhereFitness.xcdatamodeld */; };
+		FB85332F23C3C9690080F651 /* User+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB85332E23C3C9690080F651 /* User+Convenience.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FB565C5E23C3CD8B00F8DE18 /* UserRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepresentation.swift; sourceTree = "<group>"; };
+		FB565C6023C3CEBB00F8DE18 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		FB565C6423C3D5AB00F8DE18 /* FitnessClassRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitnessClassRepresentation.swift; sourceTree = "<group>"; };
+		FB565C6623C3D64E00F8DE18 /* Class+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Class+Convenience.swift"; sourceTree = "<group>"; };
 		FB85331423C3AD0F0080F651 /* AnywhereFitness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnywhereFitness.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB85331723C3AD0F0080F651 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FB85331923C3AD0F0080F651 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +34,8 @@
 		FB85332023C3AD130080F651 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FB85332323C3AD130080F651 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FB85332523C3AD130080F651 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FB85332C23C3C0AF0080F651 /* AnywhereFitness.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AnywhereFitness.xcdatamodel; sourceTree = "<group>"; };
+		FB85332E23C3C9690080F651 /* User+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+Convenience.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +49,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FB565C6223C3D4EF00F8DE18 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				FB85332B23C3C0AF0080F651 /* AnywhereFitness.xcdatamodeld */,
+				FB85332E23C3C9690080F651 /* User+Convenience.swift */,
+				FB565C6623C3D64E00F8DE18 /* Class+Convenience.swift */,
+				FB565C6023C3CEBB00F8DE18 /* CoreDataStack.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		FB565C6323C3D50B00F8DE18 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FB565C6423C3D5AB00F8DE18 /* FitnessClassRepresentation.swift */,
+				FB565C5E23C3CD8B00F8DE18 /* UserRepresentation.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		FB85330B23C3AD0F0080F651 = {
 			isa = PBXGroup;
 			children = (
@@ -58,8 +90,10 @@
 			children = (
 				FB85331723C3AD0F0080F651 /* AppDelegate.swift */,
 				FB85331923C3AD0F0080F651 /* SceneDelegate.swift */,
+				FB565C6223C3D4EF00F8DE18 /* CoreData */,
 				FB85331B23C3AD0F0080F651 /* ViewController.swift */,
 				FB85331D23C3AD0F0080F651 /* Main.storyboard */,
+				FB565C6323C3D50B00F8DE18 /* Models */,
 				FB85332023C3AD130080F651 /* Assets.xcassets */,
 				FB85332223C3AD130080F651 /* LaunchScreen.storyboard */,
 				FB85332523C3AD130080F651 /* Info.plist */,
@@ -138,9 +172,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB565C6123C3CEBB00F8DE18 /* CoreDataStack.swift in Sources */,
 				FB85331C23C3AD0F0080F651 /* ViewController.swift in Sources */,
+				FB565C5F23C3CD8B00F8DE18 /* UserRepresentation.swift in Sources */,
 				FB85331823C3AD0F0080F651 /* AppDelegate.swift in Sources */,
 				FB85331A23C3AD0F0080F651 /* SceneDelegate.swift in Sources */,
+				FB565C6523C3D5AB00F8DE18 /* FitnessClassRepresentation.swift in Sources */,
+				FB85332D23C3C0AF0080F651 /* AnywhereFitness.xcdatamodeld in Sources */,
+				FB85332F23C3C9690080F651 /* User+Convenience.swift in Sources */,
+				FB565C6723C3D64E00F8DE18 /* Class+Convenience.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -338,6 +378,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		FB85332B23C3C0AF0080F651 /* AnywhereFitness.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				FB85332C23C3C0AF0080F651 /* AnywhereFitness.xcdatamodel */,
+			);
+			currentVersion = FB85332C23C3C0AF0080F651 /* AnywhereFitness.xcdatamodel */;
+			path = AnywhereFitness.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = FB85330C23C3AD0F0080F651 /* Project object */;
 }
