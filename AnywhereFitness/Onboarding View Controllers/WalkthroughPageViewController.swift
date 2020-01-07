@@ -14,6 +14,7 @@ class WalkthroughPageViewController: UIViewController {
     @IBOutlet var imageView: UIImageView!
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var subtitleLabel: UILabel!
+    @IBOutlet var skipButton: UIButton!
     
     let model: WalkthroughModel
     
@@ -45,5 +46,9 @@ class WalkthroughPageViewController: UIViewController {
         subtitleLabel.textColor = .white
         
         containerView.backgroundColor = UIColor(hexString: "#3068CC")
+    }
+
+    @IBAction func skipTapped(sender: UIButton) {
+        
     }
 }
