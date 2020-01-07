@@ -10,5 +10,5 @@ import Foundation
 struct UserRepresentation {
     var username:String
     var password: String
-    var isInstructor: Int? 
+    var isInstructor: Bool
 }

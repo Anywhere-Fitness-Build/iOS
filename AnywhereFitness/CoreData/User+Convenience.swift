@@ -12,14 +12,15 @@ import CoreData
 extension User {
     var userRepresentation: UserRepresentation? {
         
-        guard let username = username,
+        guard let
+            username = username,
             let password = password else {return nil}
         
-        return UserRepresentation(username: username, password:password)
+        return UserRepresentation(username:username, password:password, isInstructor:isInstructor)
     }
     @discardableResult convenience init(username:String,
                                         password:String,
-                                        isInstructor: Int?,
+                                        isInstructor: Bool,
                                         context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
         self.init(context:context)
         self.username = username

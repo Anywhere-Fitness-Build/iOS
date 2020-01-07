@@ -8,11 +8,11 @@
 
 import Foundation
 struct FitnessClassRepresentation {
-    var name:String?
-    var type:String?
-    var startTime:String?
-    var duration:String?
-    var intensity: String? // changed to string to temp sqaush bug
-    var location:String?
-    var maxSize:String? // changed to string to temp sqaush bug
+    var name:String
+    var classType:String
+    var startTime:String
+    var duration:String
+    var intensity: Double
+    var location:String
+    var maxSize:Double
 }
