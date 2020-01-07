@@ -12,7 +12,7 @@ struct FitnessClassRepresentation {
     var type:String?
     var startTime:String?
     var duration:String?
-    var intensity: Int16?
+    var intensity: String? // changed to string to temp sqaush bug
     var location:String?
-    var maxSize:Int?
+    var maxSize:String? // changed to string to temp sqaush bug
 }

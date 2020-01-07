@@ -13,31 +13,30 @@ extension FitnessClass{
         var fitnessClassRepresentation: FitnessClassRepresentation? {
             
             guard let name = name,
-            let type = type,
+            let classType = classType,
             let startTime = startTime,
             let duration = duration,
             let intensity = intensity,
             let location = location,
-            let maxSize = maxSize else {return nil}
-                
+                let maxSize = maxSize else {return nil}
             
             
          
             
-            
-            return FitnessClassRepresentation(name: name, type:type, startTime:startTime, duration:duration, intensity:intensity, location:location, maxSize:maxSize)
+//
+//            return FitnessClassRepresentation(name: name, classType:classType, startTime:startTime, duration:duration, intensity:intensity, location:location, maxSize:maxSize)
         }
         @discardableResult convenience init(name:String,
-                                            type:String,
+                                            classType:String,
                                             startTime: String,
                                             duration:String,
-                                            intensity:Int16,
+                                            intensity:String,
                                             location:String,
-                                            maxSize:Int16,
+                                            maxSize:String,
                                             context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
             self.init(context:context)
             self.name = name
-            self.type = type
+            self.classType = classType
             self.startTime = startTime
             self.duration = duration
             self.intensity = intensity
@@ -47,8 +46,8 @@ extension FitnessClass{
         }
         
         @discardableResult convenience init?(fitnessClassRepresentation: FitnessClassRepresentation,  context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
-            self.init(name: FitnessClassRepresentation.name,
-                      type: FitnessClassRepresentation.type,
+            //self.init(name: FitnessClassRepresentation.name,
+            classType;: FitnessClassRepresentation.type,
                       startTime: FitnessClassRepresentation.startTime,
                       isInstructor: FitnessClassRepresentation.isInstructor)
                 
