@@ -101,11 +101,6 @@
 			path = "Onboarding View Controllers";
 			sourceTree = "<group>";
 		};
-		BB17E7A123C3E4AD0089EE9F /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				BB17E7A223C3E4C10089EE9F /* WalkthroughPageModel.swift */,
-
 		FB565C6223C3D4EF00F8DE18 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
@@ -122,6 +117,7 @@
 			children = (
 				FB565C6423C3D5AB00F8DE18 /* FitnessClassRepresentation.swift */,
 				FB565C5E23C3CD8B00F8DE18 /* UserRepresentation.swift */,
+                BB17E7A223C3E4C10089EE9F /* WalkthroughPageModel.swift */,
 
 			);
 			path = Models;
