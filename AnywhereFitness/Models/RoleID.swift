@@ -1,5 +1,5 @@
 //
-//  id.swift
+//  role_id.swift
 //  AnywhereFitness
 //
 //  Created by Lambda_School_Loaner_219 on 1/8/20.
@@ -7,9 +7,6 @@
 //
 
 import Foundation
-struct Id: Codable  {
-    var id:Int
-    //var role_id:Int 
+struct RoleID: Codable {
+    var role_id: Int
 }
-
-

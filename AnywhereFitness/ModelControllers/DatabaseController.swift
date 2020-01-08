@@ -22,11 +22,12 @@ enum NetworkError: Error {
     case noDecode
 }
 
-class APIController {
+class DatabaseController {
     
     private let baseUrl = URL(string: "https://anywhere-fitness-bw.herokuapp.com")!
-    private let signUpUrl = URL(string:" https://anywhere-fitness-bw.herokuapp.com/auth/register/")!
+    private let signUpUrl = URL(string:"https://anywhere-fitness-bw.herokuapp.com/auth/register/")!
     var id:Id?
+    var roleID:RoleID?
     
     func signUp(with user: UserRepresentation, completion: @escaping (Error?) -> ()) {
        
@@ -61,7 +62,7 @@ class APIController {
     }
     
     func signIn(with user: UserRepresentation, completion: @escaping (Error?) -> ()) {
-        let loginUrl = baseUrl.appendingPathComponent("users/login")
+        let loginUrl = baseUrl.appendingPathComponent("/auth/login")
         
         var request = URLRequest(url: loginUrl)
         request.httpMethod = HTTPMethod.post.rawValue
@@ -96,6 +97,7 @@ class APIController {
             let decoder = JSONDecoder()
             do {
                 self.id = try decoder.decode(Id.self, from: data) //self.bearer = try decoder.decode(Bearer.self, from: data)
+                self.roleID = try decoder.decode(RoleID.self, from:data)
             } catch {
                 print("Error decoding id object: \(error)")
                 completion(error)

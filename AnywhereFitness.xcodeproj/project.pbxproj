@@ -18,6 +18,8 @@
 		BB17E7AD23C3ED7F0089EE9F /* WalkthroughPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB17E7AC23C3ED7F0089EE9F /* WalkthroughPageViewController.xib */; };
 		BB17E7AF23C3ED8F0089EE9F /* WalkthroughViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB17E7AE23C3ED8F0089EE9F /* WalkthroughViewController.xib */; };
 		BB17E7B323C4096F0089EE9F /* Launch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB17E7B223C4096F0089EE9F /* Launch.storyboard */; };
+		FB53868823C670D500A342AA /* LoginStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB53868723C670D500A342AA /* LoginStruct.swift */; };
+		FB53868A23C6711900A342AA /* WhoAmI.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB53868923C6711900A342AA /* WhoAmI.swift */; };
 		FB565C5F23C3CD8B00F8DE18 /* UserRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB565C5E23C3CD8B00F8DE18 /* UserRepresentation.swift */; };
 		FB565C6123C3CEBB00F8DE18 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB565C6023C3CEBB00F8DE18 /* CoreDataStack.swift */; };
 		FB565C6523C3D5AB00F8DE18 /* FitnessClassRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB565C6423C3D5AB00F8DE18 /* FitnessClassRepresentation.swift */; };
@@ -34,6 +36,7 @@
 		FBF2060223C5A22C00532C78 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF2060123C5A22C00532C78 /* UserController.swift */; };
 		FBF2060523C5A30300532C78 /* DatabaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF2060423C5A30300532C78 /* DatabaseController.swift */; };
 		FBF2060723C5A91700532C78 /* Id.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF2060623C5A91700532C78 /* Id.swift */; };
+		FBF2060923C5B45900532C78 /* RoleID.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF2060823C5B45900532C78 /* RoleID.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +51,8 @@
 		BB17E7AC23C3ED7F0089EE9F /* WalkthroughPageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WalkthroughPageViewController.xib; sourceTree = "<group>"; };
 		BB17E7AE23C3ED8F0089EE9F /* WalkthroughViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WalkthroughViewController.xib; sourceTree = "<group>"; };
 		BB17E7B223C4096F0089EE9F /* Launch.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Launch.storyboard; sourceTree = "<group>"; };
+		FB53868723C670D500A342AA /* LoginStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginStruct.swift; sourceTree = "<group>"; };
+		FB53868923C6711900A342AA /* WhoAmI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhoAmI.swift; sourceTree = "<group>"; };
 		FB565C5E23C3CD8B00F8DE18 /* UserRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepresentation.swift; sourceTree = "<group>"; };
 		FB565C6023C3CEBB00F8DE18 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		FB565C6423C3D5AB00F8DE18 /* FitnessClassRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitnessClassRepresentation.swift; sourceTree = "<group>"; };
@@ -66,6 +71,7 @@
 		FBF2060123C5A22C00532C78 /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
 		FBF2060423C5A30300532C78 /* DatabaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseController.swift; sourceTree = "<group>"; };
 		FBF2060623C5A91700532C78 /* Id.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Id.swift; sourceTree = "<group>"; };
+		FBF2060823C5B45900532C78 /* RoleID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoleID.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,8 +122,11 @@
 			children = (
 				FB565C6423C3D5AB00F8DE18 /* FitnessClassRepresentation.swift */,
 				FB565C5E23C3CD8B00F8DE18 /* UserRepresentation.swift */,
+				FB53868723C670D500A342AA /* LoginStruct.swift */,
+				FB53868923C6711900A342AA /* WhoAmI.swift */,
 				BB17E7A223C3E4C10089EE9F /* WalkthroughPageModel.swift */,
 				FBF2060623C5A91700532C78 /* Id.swift */,
+				FBF2060823C5B45900532C78 /* RoleID.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -262,15 +271,18 @@
 				FB85331C23C3AD0F0080F651 /* LoginViewController.swift in Sources */,
 				FBF2060723C5A91700532C78 /* Id.swift in Sources */,
 				FB565C5F23C3CD8B00F8DE18 /* UserRepresentation.swift in Sources */,
+				FB53868823C670D500A342AA /* LoginStruct.swift in Sources */,
 				FB85331823C3AD0F0080F651 /* AppDelegate.swift in Sources */,
 				BB17E7AB23C3ECFD0089EE9F /* UIColor.swift in Sources */,
 				BB17E7A923C3ECFD0089EE9F /* UIImage.swift in Sources */,
 				FBF2060223C5A22C00532C78 /* UserController.swift in Sources */,
+				FBF2060923C5B45900532C78 /* RoleID.swift in Sources */,
 				FB85331A23C3AD0F0080F651 /* SceneDelegate.swift in Sources */,
 				BB17E7A523C3E5AC0089EE9F /* OnboardingViewController.swift in Sources */,
 				FBF2060023C589B800532C78 /* SignUpController.swift in Sources */,
 				FB565C6523C3D5AB00F8DE18 /* FitnessClassRepresentation.swift in Sources */,
 				FB85332D23C3C0AF0080F651 /* AnywhereFitness.xcdatamodeld in Sources */,
+				FB53868A23C6711900A342AA /* WhoAmI.swift in Sources */,
 				FB85332F23C3C9690080F651 /* User+Convenience.swift in Sources */,
 				FB565C6723C3D64E00F8DE18 /* Class+Convenience.swift in Sources */,
 				FBF2060523C5A30300532C78 /* DatabaseController.swift in Sources */,

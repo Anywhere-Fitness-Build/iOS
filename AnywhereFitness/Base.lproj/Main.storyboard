@@ -54,6 +54,9 @@
                                 <rect key="frame" x="171" y="449" width="72" height="50"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="Login"/>
+                                <connections>
+                                    <action selector="loginTappedWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pds-dy-qBH"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="es0-o5-lVw">
                                 <rect key="frame" x="159" y="491" width="107" height="55"/>

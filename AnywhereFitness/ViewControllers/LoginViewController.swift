@@ -8,6 +8,8 @@
 
 import UIKit
 class LoginViewController: UIViewController {
+    var databaseController = DatabaseController()
+    var roleID = RoleID(role_id:2) 
 
     // MARK: - IBOutlets
     @IBOutlet weak var usernameTextField: UITextField!
@@ -30,7 +32,25 @@ class LoginViewController: UIViewController {
     }
 
     @IBAction func loginTapped(sender: UIButton) {
+        let username = usernameTextField.text!
+        let password = passwordTextField.text!
+        let instructorID = true
+        let testUser = UserRepresentation(username:username, password:password, isInstructor: instructorID)
+        databaseController.signIn(with: testUser){
+             error in
+                               if let error = error {
+                                   print("Error occurred during sign up: \(error)")
+                               } else {
+                                   DispatchQueue.main.async {
+                                       self.dismiss(animated: true, completion: nil)
+                                   }
+       
+     
+                
 
     }
 }
 
+
+}
+}
