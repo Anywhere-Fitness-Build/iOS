@@ -9,7 +9,7 @@
 import UIKit
 class LoginViewController: UIViewController {
     var databaseController = DatabaseController()
-    //var roleID = RoleID(role_id:2) 
+    
 
     // MARK: - IBOutlets
     @IBOutlet weak var usernameTextField: UITextField!
@@ -28,8 +28,8 @@ class LoginViewController: UIViewController {
         let username = usernameTextField.text!
         let password = passwordTextField.text!
         
-        let testUser = UserRepresentation(username:username, password:password)
-        databaseController.signIn(with: testUser){
+        let loginUser = UserRepresentation(username:username, password:password)
+        databaseController.signIn(with: loginUser){
              error in
                                if let error = error {
                                    print("Error occurred during sign up: \(error)")

@@ -29,7 +29,7 @@ class DatabaseController {
     private let baseUrl = URL(string: "https://anywhere-fitness-bw.herokuapp.com")!
     private let signUpUrl = URL(string:"https://anywhere-fitness-bw.herokuapp.com/auth/register/")!
     var loginStruct:LoginStruct?
-    var roleID:RoleID?
+    var roleID:RoleID? //user receives a roleID on signup
     
     
     func signUp(with user: UserRepresentation, completion: @escaping (Error?) -> ()) {
@@ -68,7 +68,7 @@ class DatabaseController {
                     decoder.keyDecodingStrategy = .convertFromSnakeCase
                     do {
                         self.loginStruct = try decoder.decode(LoginStruct.self, from: data)
-                        print("Success signing up  your role_id is: \(self.roleID?.roleId)")
+                        print("Success signing up  your role_id is: \(String(describing: self.roleID?.roleId))")
                         
                     } catch {
                         print("Error decoding id object: \(error)")
@@ -121,7 +121,7 @@ class DatabaseController {
             decoder.keyDecodingStrategy = .convertFromSnakeCase
             do {
                 self.loginStruct = try decoder.decode(LoginStruct.self, from: data) //self.bearer = try decoder.decode(Bearer.self, from: data)
-                print("Success logging in your token is: \(self.loginStruct?.token)")
+                print("Success logging in your token is: \(String(describing: self.loginStruct?.token))")
                 
             } catch {
                 print("Error decoding id object: \(error)")
