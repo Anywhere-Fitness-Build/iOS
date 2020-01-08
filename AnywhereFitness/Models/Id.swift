@@ -9,7 +9,7 @@
 import Foundation
 struct Id: Codable  {
     var id:Int
-    //var role_id:Int 
+    
 }
 
 

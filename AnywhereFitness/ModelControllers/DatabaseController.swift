@@ -29,6 +29,8 @@ class DatabaseController {
     private let baseUrl = URL(string: "https://anywhere-fitness-bw.herokuapp.com")!
     private let signUpUrl = URL(string:"https://anywhere-fitness-bw.herokuapp.com/auth/register/")!
     var loginStruct:LoginStruct?
+    var roleID:RoleID?
+    
     
     func signUp(with user: UserRepresentation, completion: @escaping (Error?) -> ()) {
        
@@ -46,7 +48,7 @@ class DatabaseController {
             completion(error)
             return
         }
-        URLSession.shared.dataTask(with: request) { (_, response, error) in
+        URLSession.shared.dataTask(with: request) { (data, response, error) in
             if let response = response as? HTTPURLResponse,
                 response.statusCode != 200 {
                 completion(NSError(domain: "", code: response.statusCode, userInfo:nil))
@@ -57,10 +59,30 @@ class DatabaseController {
                 completion(error)
                 return
             }
+            guard let data = data else {
+                completion(NSError())
+                return
+            }
             
-            completion(nil)
-        }.resume()
+                    let decoder = JSONDecoder()
+                    decoder.keyDecodingStrategy = .convertFromSnakeCase
+                    do {
+                        self.loginStruct = try decoder.decode(LoginStruct.self, from: data)
+                        print("Success signing up  your role_id is: \(self.roleID?.roleId)")
+                        
+                    } catch {
+                        print("Error decoding id object: \(error)")
+                        completion(error)
+                        return
+                    }
+                    
+                    completion(nil)
+                }.resume()
+            
+            
     }
+      
+    
     
     func signIn(with user: UserRepresentation, completion: @escaping (Error?) -> ()) {
         let loginUrl = baseUrl.appendingPathComponent("/auth/login")
@@ -112,3 +134,4 @@ class DatabaseController {
     }
 
 }
+

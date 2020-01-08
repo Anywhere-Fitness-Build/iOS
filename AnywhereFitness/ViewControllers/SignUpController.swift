@@ -9,6 +9,7 @@
 import UIKit
 
 class SignUpController: UIViewController {
+    var signUpDataBaseController = DatabaseController() 
     @IBOutlet weak var usernameTextField: UITextField!
       private var isInstructor: Bool = false
     @IBOutlet weak var instructorButton: UIButton!
@@ -28,8 +29,34 @@ class SignUpController: UIViewController {
             }
             isInstructor.toggle()
         }
+    
+    
+    @IBAction func SignUpUserTapped(_ sender: Any) {
+                let username = usernameTextField.text!
+                let password = passwordTextField.text!
+                let isInstructorValue = isInstructor
+                let newUser = UserRepresentation(username:username, password:password, isInstructor: isInstructorValue)
+                signUpDataBaseController.signUp(with: newUser){
+                     error in
+                                       if let error = error {
+                                           print("Error occurred during sign up: \(error)")
+                                       } else {
+                                           DispatchQueue.main.async {
+                                               self.dismiss(animated: true, completion: nil)
+                                           }
+               
+             
+                        
 
-    }
+            }
+        }
+
+
+        }
+        }
+    
+    
+    
     
     /*
     // MARK: - Navigation

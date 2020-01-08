@@ -22,20 +22,13 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
     }
 
-    @IBAction func instructorTapped(sender: UIButton) {
-        if isInstructor {
-            instructorButton.setImage(UIImage.init(systemName: "square"), for: .normal)
-        } else {
-            instructorButton.setImage(UIImage.init(systemName: "checkmark.square.fill"), for: .normal)
-        }
-        isInstructor.toggle()
-    }
+  
 
     @IBAction func loginTapped(sender: UIButton) {
         let username = usernameTextField.text!
         let password = passwordTextField.text!
-        let instructorID = true
-        let testUser = UserRepresentation(username:username, password:password, isInstructor: instructorID)
+        
+        let testUser = UserRepresentation(username:username, password:password)
         databaseController.signIn(with: testUser){
              error in
                                if let error = error {
