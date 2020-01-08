@@ -31,6 +31,9 @@
 		FB85332D23C3C0AF0080F651 /* AnywhereFitness.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FB85332B23C3C0AF0080F651 /* AnywhereFitness.xcdatamodeld */; };
 		FB85332F23C3C9690080F651 /* User+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB85332E23C3C9690080F651 /* User+Convenience.swift */; };
 		FBF2060023C589B800532C78 /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF205FF23C589B800532C78 /* SignUpController.swift */; };
+		FBF2060223C5A22C00532C78 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF2060123C5A22C00532C78 /* UserController.swift */; };
+		FBF2060523C5A30300532C78 /* DatabaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF2060423C5A30300532C78 /* DatabaseController.swift */; };
+		FBF2060723C5A91700532C78 /* id.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF2060623C5A91700532C78 /* id.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +63,9 @@
 		FB85332C23C3C0AF0080F651 /* AnywhereFitness.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AnywhereFitness.xcdatamodel; sourceTree = "<group>"; };
 		FB85332E23C3C9690080F651 /* User+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+Convenience.swift"; sourceTree = "<group>"; };
 		FBF205FF23C589B800532C78 /* SignUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpController.swift; sourceTree = "<group>"; };
+		FBF2060123C5A22C00532C78 /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
+		FBF2060423C5A30300532C78 /* DatabaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseController.swift; sourceTree = "<group>"; };
+		FBF2060623C5A91700532C78 /* id.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = id.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +117,7 @@
 				FB565C6423C3D5AB00F8DE18 /* FitnessClassRepresentation.swift */,
 				FB565C5E23C3CD8B00F8DE18 /* UserRepresentation.swift */,
 				BB17E7A223C3E4C10089EE9F /* WalkthroughPageModel.swift */,
+				FBF2060623C5A91700532C78 /* id.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -148,6 +155,7 @@
 				FB85332523C3AD130080F651 /* Info.plist */,
 				BB17E78723C3B0EA0089EE9F /* User.swift */,
 				BB17E7A423C3E5AC0089EE9F /* OnboardingViewController.swift */,
+				FBF2060323C5A24100532C78 /* ModelControllers */,
 			);
 			path = AnywhereFitness;
 			sourceTree = "<group>";
@@ -159,6 +167,15 @@
 				FB85331B23C3AD0F0080F651 /* LoginViewController.swift */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		FBF2060323C5A24100532C78 /* ModelControllers */ = {
+			isa = PBXGroup;
+			children = (
+				FBF2060123C5A22C00532C78 /* UserController.swift */,
+				FBF2060423C5A30300532C78 /* DatabaseController.swift */,
+			);
+			path = ModelControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -243,10 +260,12 @@
 				BB17E7A323C3E4C10089EE9F /* WalkthroughPageModel.swift in Sources */,
 				FB565C6123C3CEBB00F8DE18 /* CoreDataStack.swift in Sources */,
 				FB85331C23C3AD0F0080F651 /* LoginViewController.swift in Sources */,
+				FBF2060723C5A91700532C78 /* id.swift in Sources */,
 				FB565C5F23C3CD8B00F8DE18 /* UserRepresentation.swift in Sources */,
 				FB85331823C3AD0F0080F651 /* AppDelegate.swift in Sources */,
 				BB17E7AB23C3ECFD0089EE9F /* UIColor.swift in Sources */,
 				BB17E7A923C3ECFD0089EE9F /* UIImage.swift in Sources */,
+				FBF2060223C5A22C00532C78 /* UserController.swift in Sources */,
 				FB85331A23C3AD0F0080F651 /* SceneDelegate.swift in Sources */,
 				BB17E7A523C3E5AC0089EE9F /* OnboardingViewController.swift in Sources */,
 				FBF2060023C589B800532C78 /* SignUpController.swift in Sources */,
@@ -254,6 +273,7 @@
 				FB85332D23C3C0AF0080F651 /* AnywhereFitness.xcdatamodeld in Sources */,
 				FB85332F23C3C9690080F651 /* User+Convenience.swift in Sources */,
 				FB565C6723C3D64E00F8DE18 /* Class+Convenience.swift in Sources */,
+				FBF2060523C5A30300532C78 /* DatabaseController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
