@@ -26,6 +26,7 @@
 		BB8E064423C5583100CAD572 /* ClassDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8E064323C5583100CAD572 /* ClassDetailViewController.swift */; };
 		BB8E064623C558DD00CAD572 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8E064523C558DD00CAD572 /* UserViewController.swift */; };
 		BB8E064A23C5620F00CAD572 /* UserTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8E064923C5620F00CAD572 /* UserTabBarController.swift */; };
+		BB8E065023C6438F00CAD572 /* ClassTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8E064F23C6438F00CAD572 /* ClassTableViewCell.swift */; };
 		FB565C5F23C3CD8B00F8DE18 /* UserRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB565C5E23C3CD8B00F8DE18 /* UserRepresentation.swift */; };
 		FB565C6123C3CEBB00F8DE18 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB565C6023C3CEBB00F8DE18 /* CoreDataStack.swift */; };
 		FB565C6523C3D5AB00F8DE18 /* FitnessClassRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB565C6423C3D5AB00F8DE18 /* FitnessClassRepresentation.swift */; };
@@ -72,6 +73,7 @@
 		BB8E064323C5583100CAD572 /* ClassDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassDetailViewController.swift; sourceTree = "<group>"; };
 		BB8E064523C558DD00CAD572 /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 		BB8E064923C5620F00CAD572 /* UserTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTabBarController.swift; sourceTree = "<group>"; };
+		BB8E064F23C6438F00CAD572 /* ClassTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassTableViewCell.swift; sourceTree = "<group>"; };
 		FB565C5E23C3CD8B00F8DE18 /* UserRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepresentation.swift; sourceTree = "<group>"; };
 		FB565C6023C3CEBB00F8DE18 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		FB565C6423C3D5AB00F8DE18 /* FitnessClassRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitnessClassRepresentation.swift; sourceTree = "<group>"; };
@@ -187,6 +189,7 @@
 				FB85331D23C3AD0F0080F651 /* Main.storyboard */,
 				BB17E7B223C4096F0089EE9F /* Launch.storyboard */,
 				BB8E063D23C54AC300CAD572 /* User.storyboard */,
+				BB8E064F23C6438F00CAD572 /* ClassTableViewCell.swift */,
 				BB8E063F23C557FA00CAD572 /* MyClassesTableViewController.swift */,
 				BB8E064923C5620F00CAD572 /* UserTabBarController.swift */,
 				BB8E064523C558DD00CAD572 /* UserViewController.swift */,
@@ -339,6 +342,7 @@
 				FB85332F23C3C9690080F651 /* User+Convenience.swift in Sources */,
 				BB8E064623C558DD00CAD572 /* UserViewController.swift in Sources */,
 				BB8E064223C5581100CAD572 /* SearchClassesTableViewController.swift in Sources */,
+				BB8E065023C6438F00CAD572 /* ClassTableViewCell.swift in Sources */,
 				FB565C6723C3D64E00F8DE18 /* Class+Convenience.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
