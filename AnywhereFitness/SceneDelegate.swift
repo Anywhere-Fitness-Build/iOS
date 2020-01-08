@@ -23,13 +23,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let launchStoryboard = UIStoryboard(name: "Launch", bundle: nil)
+        let userStoryboard = UIStoryboard(name: "User", bundle: nil)
         var vc: UIViewController
 
         if launchedBefore {
             //vc = mainStoryboard.instantiateInitialViewController()!
             vc = launchStoryboard.instantiateViewController(withIdentifier: "LoginViewController")
         } else {
-            vc = launchStoryboard.instantiateViewController(withIdentifier: "OnboardingViewController")
+            vc = userStoryboard.instantiateInitialViewController()!
+            //vc = launchStoryboard.instantiateViewController(withIdentifier: "OnboardingViewController")
         }
 
         //UserDefaults.standard.set(true, forKey: "hasLaunched")

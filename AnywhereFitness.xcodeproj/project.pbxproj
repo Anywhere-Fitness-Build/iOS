@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-
 		BB17E78823C3B0EA0089EE9F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB17E78723C3B0EA0089EE9F /* User.swift */; };
 		BB17E79A23C3E3210089EE9F /* WalkthroughViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB17E79923C3E3210089EE9F /* WalkthroughViewController.swift */; };
 		BB17E79C23C3E34B0089EE9F /* WalkthroughPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB17E79B23C3E34B0089EE9F /* WalkthroughPageViewController.swift */; };
@@ -20,12 +19,17 @@
 		BB17E7AF23C3ED8F0089EE9F /* WalkthroughViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB17E7AE23C3ED8F0089EE9F /* WalkthroughViewController.xib */; };
 		BB17E7B323C4096F0089EE9F /* Launch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB17E7B223C4096F0089EE9F /* Launch.storyboard */; };
 		BB17E7B523C414620089EE9F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB17E7B423C414620089EE9F /* LoginViewController.swift */; };
-
+		BB8E063423C5479700CAD572 /* AnywhereFitnessUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8E063323C5479700CAD572 /* AnywhereFitnessUITests.swift */; };
+		BB8E063E23C54AC300CAD572 /* User.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB8E063D23C54AC300CAD572 /* User.storyboard */; };
+		BB8E064023C557FA00CAD572 /* MyClassesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8E063F23C557FA00CAD572 /* MyClassesTableViewController.swift */; };
+		BB8E064223C5581100CAD572 /* SearchClassesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8E064123C5581100CAD572 /* SearchClassesTableViewController.swift */; };
+		BB8E064423C5583100CAD572 /* ClassDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8E064323C5583100CAD572 /* ClassDetailViewController.swift */; };
+		BB8E064623C558DD00CAD572 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8E064523C558DD00CAD572 /* UserViewController.swift */; };
+		BB8E064A23C5620F00CAD572 /* UserTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8E064923C5620F00CAD572 /* UserTabBarController.swift */; };
 		FB565C5F23C3CD8B00F8DE18 /* UserRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB565C5E23C3CD8B00F8DE18 /* UserRepresentation.swift */; };
 		FB565C6123C3CEBB00F8DE18 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB565C6023C3CEBB00F8DE18 /* CoreDataStack.swift */; };
 		FB565C6523C3D5AB00F8DE18 /* FitnessClassRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB565C6423C3D5AB00F8DE18 /* FitnessClassRepresentation.swift */; };
 		FB565C6723C3D64E00F8DE18 /* Class+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB565C6623C3D64E00F8DE18 /* Class+Convenience.swift */; };
-
 		FB85331823C3AD0F0080F651 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB85331723C3AD0F0080F651 /* AppDelegate.swift */; };
 		FB85331A23C3AD0F0080F651 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB85331923C3AD0F0080F651 /* SceneDelegate.swift */; };
 		FB85331C23C3AD0F0080F651 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB85331B23C3AD0F0080F651 /* ViewController.swift */; };
@@ -36,8 +40,17 @@
 		FB85332F23C3C9690080F651 /* User+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB85332E23C3C9690080F651 /* User+Convenience.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXFileReference section */
+/* Begin PBXContainerItemProxy section */
+		BB8E063623C5479700CAD572 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FB85330C23C3AD0F0080F651 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FB85331323C3AD0F0080F651;
+			remoteInfo = AnywhereFitness;
+		};
+/* End PBXContainerItemProxy section */
 
+/* Begin PBXFileReference section */
 		BB17E78723C3B0EA0089EE9F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		BB17E79923C3E3210089EE9F /* WalkthroughViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughViewController.swift; sourceTree = "<group>"; };
 		BB17E79B23C3E34B0089EE9F /* WalkthroughPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughPageViewController.swift; sourceTree = "<group>"; };
@@ -50,12 +63,19 @@
 		BB17E7AE23C3ED8F0089EE9F /* WalkthroughViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WalkthroughViewController.xib; sourceTree = "<group>"; };
 		BB17E7B223C4096F0089EE9F /* Launch.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Launch.storyboard; sourceTree = "<group>"; };
 		BB17E7B423C414620089EE9F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-
+		BB8E063123C5479700CAD572 /* AnywhereFitnessUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AnywhereFitnessUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB8E063323C5479700CAD572 /* AnywhereFitnessUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnywhereFitnessUITests.swift; sourceTree = "<group>"; };
+		BB8E063523C5479700CAD572 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BB8E063D23C54AC300CAD572 /* User.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = User.storyboard; sourceTree = "<group>"; };
+		BB8E063F23C557FA00CAD572 /* MyClassesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyClassesTableViewController.swift; sourceTree = "<group>"; };
+		BB8E064123C5581100CAD572 /* SearchClassesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchClassesTableViewController.swift; sourceTree = "<group>"; };
+		BB8E064323C5583100CAD572 /* ClassDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassDetailViewController.swift; sourceTree = "<group>"; };
+		BB8E064523C558DD00CAD572 /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
+		BB8E064923C5620F00CAD572 /* UserTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTabBarController.swift; sourceTree = "<group>"; };
 		FB565C5E23C3CD8B00F8DE18 /* UserRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepresentation.swift; sourceTree = "<group>"; };
 		FB565C6023C3CEBB00F8DE18 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		FB565C6423C3D5AB00F8DE18 /* FitnessClassRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitnessClassRepresentation.swift; sourceTree = "<group>"; };
 		FB565C6623C3D64E00F8DE18 /* Class+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Class+Convenience.swift"; sourceTree = "<group>"; };
-
 		FB85331423C3AD0F0080F651 /* AnywhereFitness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnywhereFitness.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB85331723C3AD0F0080F651 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FB85331923C3AD0F0080F651 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -69,6 +89,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		BB8E062E23C5479700CAD572 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FB85331123C3AD0F0080F651 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -79,7 +106,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-
 		BB17E79123C3DF160089EE9F /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +127,15 @@
 			path = "Onboarding View Controllers";
 			sourceTree = "<group>";
 		};
+		BB8E063223C5479700CAD572 /* AnywhereFitnessUITests */ = {
+			isa = PBXGroup;
+			children = (
+				BB8E063323C5479700CAD572 /* AnywhereFitnessUITests.swift */,
+				BB8E063523C5479700CAD572 /* Info.plist */,
+			);
+			path = AnywhereFitnessUITests;
+			sourceTree = "<group>";
+		};
 		FB565C6223C3D4EF00F8DE18 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
@@ -117,8 +152,7 @@
 			children = (
 				FB565C6423C3D5AB00F8DE18 /* FitnessClassRepresentation.swift */,
 				FB565C5E23C3CD8B00F8DE18 /* UserRepresentation.swift */,
-                BB17E7A223C3E4C10089EE9F /* WalkthroughPageModel.swift */,
-
+				BB17E7A223C3E4C10089EE9F /* WalkthroughPageModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -127,6 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				FB85331623C3AD0F0080F651 /* AnywhereFitness */,
+				BB8E063223C5479700CAD572 /* AnywhereFitnessUITests */,
 				FB85331523C3AD0F0080F651 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -135,6 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				FB85331423C3AD0F0080F651 /* AnywhereFitness.app */,
+				BB8E063123C5479700CAD572 /* AnywhereFitnessUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -142,7 +178,6 @@
 		FB85331623C3AD0F0080F651 /* AnywhereFitness */ = {
 			isa = PBXGroup;
 			children = (
-				BB17E7A123C3E4AD0089EE9F /* Models */,
 				BB17E79823C3E26F0089EE9F /* Onboarding View Controllers */,
 				BB17E79123C3DF160089EE9F /* Helpers */,
 				FB85331723C3AD0F0080F651 /* AppDelegate.swift */,
@@ -150,12 +185,15 @@
 				FB565C6223C3D4EF00F8DE18 /* CoreData */,
 				FB85331B23C3AD0F0080F651 /* ViewController.swift */,
 				FB85331D23C3AD0F0080F651 /* Main.storyboard */,
-
 				BB17E7B223C4096F0089EE9F /* Launch.storyboard */,
+				BB8E063D23C54AC300CAD572 /* User.storyboard */,
+				BB8E063F23C557FA00CAD572 /* MyClassesTableViewController.swift */,
+				BB8E064923C5620F00CAD572 /* UserTabBarController.swift */,
+				BB8E064523C558DD00CAD572 /* UserViewController.swift */,
+				BB8E064123C5581100CAD572 /* SearchClassesTableViewController.swift */,
+				BB8E064323C5583100CAD572 /* ClassDetailViewController.swift */,
 				BB17E7B423C414620089EE9F /* LoginViewController.swift */,
-
 				FB565C6323C3D50B00F8DE18 /* Models */,
-
 				FB85332023C3AD130080F651 /* Assets.xcassets */,
 				FB85332223C3AD130080F651 /* LaunchScreen.storyboard */,
 				FB85332523C3AD130080F651 /* Info.plist */,
@@ -168,6 +206,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		BB8E063023C5479700CAD572 /* AnywhereFitnessUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BB8E063A23C5479700CAD572 /* Build configuration list for PBXNativeTarget "AnywhereFitnessUITests" */;
+			buildPhases = (
+				BB8E062D23C5479700CAD572 /* Sources */,
+				BB8E062E23C5479700CAD572 /* Frameworks */,
+				BB8E062F23C5479700CAD572 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BB8E063723C5479700CAD572 /* PBXTargetDependency */,
+			);
+			name = AnywhereFitnessUITests;
+			productName = AnywhereFitnessUITests;
+			productReference = BB8E063123C5479700CAD572 /* AnywhereFitnessUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		FB85331323C3AD0F0080F651 /* AnywhereFitness */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = FB85332823C3AD130080F651 /* Build configuration list for PBXNativeTarget "AnywhereFitness" */;
@@ -191,10 +247,14 @@
 		FB85330C23C3AD0F0080F651 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1110;
+				LastSwiftUpdateCheck = 1130;
 				LastUpgradeCheck = 1110;
 				ORGANIZATIONNAME = Lambda_School_Loaner_219;
 				TargetAttributes = {
+					BB8E063023C5479700CAD572 = {
+						CreatedOnToolsVersion = 11.3;
+						TestTargetID = FB85331323C3AD0F0080F651;
+					};
 					FB85331323C3AD0F0080F651 = {
 						CreatedOnToolsVersion = 11.1;
 					};
@@ -214,11 +274,19 @@
 			projectRoot = "";
 			targets = (
 				FB85331323C3AD0F0080F651 /* AnywhereFitness */,
+				BB8E063023C5479700CAD572 /* AnywhereFitnessUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		BB8E062F23C5479700CAD572 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FB85331223C3AD0F0080F651 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -228,6 +296,7 @@
 				BB17E7AD23C3ED7F0089EE9F /* WalkthroughPageViewController.xib in Resources */,
 				FB85332123C3AD130080F651 /* Assets.xcassets in Resources */,
 				FB85331F23C3AD0F0080F651 /* Main.storyboard in Resources */,
+				BB8E063E23C54AC300CAD572 /* User.storyboard in Resources */,
 				BB17E7B323C4096F0089EE9F /* Launch.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -235,39 +304,54 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		BB8E062D23C5479700CAD572 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BB8E063423C5479700CAD572 /* AnywhereFitnessUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FB85331023C3AD0F0080F651 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-
 				BB17E7B523C414620089EE9F /* LoginViewController.swift in Sources */,
 				BB17E78823C3B0EA0089EE9F /* User.swift in Sources */,
 				BB17E79A23C3E3210089EE9F /* WalkthroughViewController.swift in Sources */,
 				BB17E79C23C3E34B0089EE9F /* WalkthroughPageViewController.swift in Sources */,
+				BB8E064A23C5620F00CAD572 /* UserTabBarController.swift in Sources */,
 				FB85331C23C3AD0F0080F651 /* ViewController.swift in Sources */,
 				BB17E7AA23C3ECFD0089EE9F /* UIViewController.swift in Sources */,
 				BB17E7A323C3E4C10089EE9F /* WalkthroughPageModel.swift in Sources */,
-
 				FB565C6123C3CEBB00F8DE18 /* CoreDataStack.swift in Sources */,
 				FB85331C23C3AD0F0080F651 /* ViewController.swift in Sources */,
 				FB565C5F23C3CD8B00F8DE18 /* UserRepresentation.swift in Sources */,
-
 				FB85331823C3AD0F0080F651 /* AppDelegate.swift in Sources */,
 				BB17E7AB23C3ECFD0089EE9F /* UIColor.swift in Sources */,
 				BB17E7A923C3ECFD0089EE9F /* UIImage.swift in Sources */,
 				FB85331A23C3AD0F0080F651 /* SceneDelegate.swift in Sources */,
-
 				BB17E7A523C3E5AC0089EE9F /* OnboardingViewController.swift in Sources */,
-
 				FB565C6523C3D5AB00F8DE18 /* FitnessClassRepresentation.swift in Sources */,
+				BB8E064423C5583100CAD572 /* ClassDetailViewController.swift in Sources */,
+				BB8E064023C557FA00CAD572 /* MyClassesTableViewController.swift in Sources */,
 				FB85332D23C3C0AF0080F651 /* AnywhereFitness.xcdatamodeld in Sources */,
 				FB85332F23C3C9690080F651 /* User+Convenience.swift in Sources */,
+				BB8E064623C558DD00CAD572 /* UserViewController.swift in Sources */,
+				BB8E064223C5581100CAD572 /* SearchClassesTableViewController.swift in Sources */,
 				FB565C6723C3D64E00F8DE18 /* Class+Convenience.swift in Sources */,
-
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BB8E063723C5479700CAD572 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FB85331323C3AD0F0080F651 /* AnywhereFitness */;
+			targetProxy = BB8E063623C5479700CAD572 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		FB85331D23C3AD0F0080F651 /* Main.storyboard */ = {
@@ -289,6 +373,44 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		BB8E063823C5479700CAD572 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = AnywhereFitnessUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.lambdaschool.AnywhereFitnessUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = AnywhereFitness;
+			};
+			name = Debug;
+		};
+		BB8E063923C5479700CAD572 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = AnywhereFitnessUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.lambdaschool.AnywhereFitnessUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = AnywhereFitness;
+			};
+			name = Release;
+		};
 		FB85332623C3AD130080F651 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -442,6 +564,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		BB8E063A23C5479700CAD572 /* Build configuration list for PBXNativeTarget "AnywhereFitnessUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BB8E063823C5479700CAD572 /* Debug */,
+				BB8E063923C5479700CAD572 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		FB85330F23C3AD0F0080F651 /* Build configuration list for PBXProject "AnywhereFitness" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
