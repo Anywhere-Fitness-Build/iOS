@@ -25,10 +25,10 @@ enum NetworkError: Error {
 class APIController {
     
     private let baseUrl = URL(string: "https://anywhere-fitness-bw.herokuapp.com")!
-    private let signUpUrl = URL(string:" https://anywhere-fitness-bw.herokuapp.com/auth/register/")
-    var bearer: Bearer?
+    private let signUpUrl = URL(string:" https://anywhere-fitness-bw.herokuapp.com/auth/register/")!
+    var id:Id?
     
-    func signUp(with user: User, completion: @escaping (Error?) -> ()) {
+    func signUp(with user: UserRepresentation, completion: @escaping (Error?) -> ()) {
        
         
         var request = URLRequest(url: signUpUrl)
@@ -60,7 +60,7 @@ class APIController {
         }.resume()
     }
     
-    func signIn(with user: User, completion: @escaping (Error?) -> ()) {
+    func signIn(with user: UserRepresentation, completion: @escaping (Error?) -> ()) {
         let loginUrl = baseUrl.appendingPathComponent("users/login")
         
         var request = URLRequest(url: loginUrl)
@@ -95,9 +95,9 @@ class APIController {
             
             let decoder = JSONDecoder()
             do {
-                self.bearer = try decoder.decode(Bearer.self, from: data)
+                self.id = try decoder.decode(Id.self, from: data) //self.bearer = try decoder.decode(Bearer.self, from: data)
             } catch {
-                print("Error decoding bearer object: \(error)")
+                print("Error decoding id object: \(error)")
                 completion(error)
                 return
             }
@@ -105,3 +105,5 @@ class APIController {
             completion(nil)
         }.resume()
     }
+
+}

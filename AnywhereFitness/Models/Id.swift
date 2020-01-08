@@ -7,6 +7,6 @@
 //
 
 import Foundation
-struct id: Codable  {
+struct Id: Codable  {
     var id:Int
 }
