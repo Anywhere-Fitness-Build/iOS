@@ -12,6 +12,8 @@ import CoreData
 enum HTTPMethod: String {
     case get = "GET"
     case post = "POST"
+    case put = "PUT"
+    case delete = "DELETE"
 }
 
 enum NetworkError: Error {
@@ -26,8 +28,7 @@ class DatabaseController {
     
     private let baseUrl = URL(string: "https://anywhere-fitness-bw.herokuapp.com")!
     private let signUpUrl = URL(string:"https://anywhere-fitness-bw.herokuapp.com/auth/register/")!
-    var id:Id?
-    var roleID:RoleID?
+    var loginStruct:LoginStruct?
     
     func signUp(with user: UserRepresentation, completion: @escaping (Error?) -> ()) {
        
@@ -95,9 +96,11 @@ class DatabaseController {
             }
             
             let decoder = JSONDecoder()
+            decoder.keyDecodingStrategy = .convertFromSnakeCase
             do {
-                self.id = try decoder.decode(Id.self, from: data) //self.bearer = try decoder.decode(Bearer.self, from: data)
-                self.roleID = try decoder.decode(RoleID.self, from:data)
+                self.loginStruct = try decoder.decode(LoginStruct.self, from: data) //self.bearer = try decoder.decode(Bearer.self, from: data)
+                print("Success logging in your token is: \(self.loginStruct?.token)")
+                
             } catch {
                 print("Error decoding id object: \(error)")
                 completion(error)

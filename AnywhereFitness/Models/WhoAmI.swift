@@ -8,7 +8,8 @@
 
 import Foundation
 struct WhoAmI {
-   var id: Int
-    var username: String 
+  var id: Int
+  var username: String
+    var roleId:Int 
     
 }

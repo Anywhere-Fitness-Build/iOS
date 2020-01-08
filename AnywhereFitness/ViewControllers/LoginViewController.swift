@@ -9,7 +9,7 @@
 import UIKit
 class LoginViewController: UIViewController {
     var databaseController = DatabaseController()
-    var roleID = RoleID(role_id:2) 
+    //var roleID = RoleID(role_id:2) 
 
     // MARK: - IBOutlets
     @IBOutlet weak var usernameTextField: UITextField!

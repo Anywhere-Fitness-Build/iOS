@@ -8,5 +8,5 @@
 
 import Foundation
 struct RoleID: Codable {
-    var role_id: Int
+    var roleId: Int
 }
