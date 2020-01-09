@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BB17E78823C3B0EA0089EE9F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB17E78723C3B0EA0089EE9F /* User.swift */; };
 		BB17E79A23C3E3210089EE9F /* WalkthroughViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB17E79923C3E3210089EE9F /* WalkthroughViewController.swift */; };
 		BB17E79C23C3E34B0089EE9F /* WalkthroughPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB17E79B23C3E34B0089EE9F /* WalkthroughPageViewController.swift */; };
 		BB17E7A323C3E4C10089EE9F /* WalkthroughPageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB17E7A223C3E4C10089EE9F /* WalkthroughPageModel.swift */; };
@@ -59,7 +58,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		BB17E78723C3B0EA0089EE9F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		BB17E79923C3E3210089EE9F /* WalkthroughViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughViewController.swift; sourceTree = "<group>"; };
 		BB17E79B23C3E34B0089EE9F /* WalkthroughPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughPageViewController.swift; sourceTree = "<group>"; };
 		BB17E7A223C3E4C10089EE9F /* WalkthroughPageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughPageModel.swift; sourceTree = "<group>"; };
@@ -152,6 +150,17 @@
 			path = AnywhereFitnessUITests;
 			sourceTree = "<group>";
 		};
+		BB8E067823C6E20600CAD572 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				FB85332223C3AD130080F651 /* LaunchScreen.storyboard */,
+				FB85331D23C3AD0F0080F651 /* Main.storyboard */,
+				BB17E7B223C4096F0089EE9F /* Launch.storyboard */,
+				BB8E063D23C54AC300CAD572 /* User.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
 		FB565C6223C3D4EF00F8DE18 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
@@ -202,25 +211,14 @@
 				BB17E79823C3E26F0089EE9F /* Onboarding View Controllers */,
 				BB17E79123C3DF160089EE9F /* Helpers */,
 				FB565C6223C3D4EF00F8DE18 /* CoreData */,
+				BB8E067823C6E20600CAD572 /* Storyboards */,
+				FB565C6323C3D50B00F8DE18 /* Models */,
+				FBF2060323C5A24100532C78 /* ModelControllers */,
 				FB85331723C3AD0F0080F651 /* AppDelegate.swift */,
 				FB85331923C3AD0F0080F651 /* SceneDelegate.swift */,
-				FB85331D23C3AD0F0080F651 /* Main.storyboard */,
-				BB17E7B223C4096F0089EE9F /* Launch.storyboard */,
-				BB8E063D23C54AC300CAD572 /* User.storyboard */,
-				BB8E065123C6803000CAD572 /* ClassDateViewController.swift */,
 				BB8E064F23C6438F00CAD572 /* ClassTableViewCell.swift */,
-				BB8E063F23C557FA00CAD572 /* MyClassesTableViewController.swift */,
-				BB8E064923C5620F00CAD572 /* UserTabBarController.swift */,
-				BB8E064523C558DD00CAD572 /* UserViewController.swift */,
-				BB8E064123C5581100CAD572 /* SearchClassesTableViewController.swift */,
-				BB8E064323C5583100CAD572 /* ClassDetailViewController.swift */,
-				FB565C6323C3D50B00F8DE18 /* Models */,
 				FB85332023C3AD130080F651 /* Assets.xcassets */,
-				FB85332223C3AD130080F651 /* LaunchScreen.storyboard */,
 				FB85332523C3AD130080F651 /* Info.plist */,
-				BB17E78723C3B0EA0089EE9F /* User.swift */,
-				BB17E7A423C3E5AC0089EE9F /* OnboardingViewController.swift */,
-				FBF2060323C5A24100532C78 /* ModelControllers */,
 			);
 			path = AnywhereFitness;
 			sourceTree = "<group>";
@@ -228,8 +226,15 @@
 		FBF205FC23C57F4B00532C78 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				BB17E7A423C3E5AC0089EE9F /* OnboardingViewController.swift */,
 				FB85331B23C3AD0F0080F651 /* LoginViewController.swift */,
 				FBF205FF23C589B800532C78 /* SignUpController.swift */,
+				BB8E065123C6803000CAD572 /* ClassDateViewController.swift */,
+				BB8E063F23C557FA00CAD572 /* MyClassesTableViewController.swift */,
+				BB8E064923C5620F00CAD572 /* UserTabBarController.swift */,
+				BB8E064523C558DD00CAD572 /* UserViewController.swift */,
+				BB8E064123C5581100CAD572 /* SearchClassesTableViewController.swift */,
+				BB8E064323C5583100CAD572 /* ClassDetailViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -356,12 +361,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BB17E78823C3B0EA0089EE9F /* User.swift in Sources */,
 				BB17E79A23C3E3210089EE9F /* WalkthroughViewController.swift in Sources */,
 				BB17E79C23C3E34B0089EE9F /* WalkthroughPageViewController.swift in Sources */,
 				BB8E064A23C5620F00CAD572 /* UserTabBarController.swift in Sources */,
 				FB85331C23C3AD0F0080F651 /* LoginViewController.swift in Sources */,
-				BB17E78823C3B0EA0089EE9F /* User.swift in Sources */,
 				BB17E79A23C3E3210089EE9F /* WalkthroughViewController.swift in Sources */,
 				BB17E79C23C3E34B0089EE9F /* WalkthroughPageViewController.swift in Sources */,
 				FB85331C23C3AD0F0080F651 /* LoginViewController.swift in Sources */,
