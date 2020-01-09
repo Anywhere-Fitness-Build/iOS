@@ -28,6 +28,7 @@ class ClassDetailViewController: UIViewController, ClassDateViewControllerDelega
     @IBOutlet private weak var intensityLabel: UILabel!
 
     // MARK: - Properties
+    var userController: UserController?
     var fitnessClass: FitnessClass?
 
     var dateFormatter: DateFormatter {

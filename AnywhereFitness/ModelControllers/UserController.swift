@@ -15,11 +15,19 @@ class UserController {
     private var classes = [FitnessClass]()
     private var classesAttending = [FitnessClass]()
 
-    func setUser(user: UserRepresentation) {
-        self.user = user
-    }
+    // MARK: - Set functions
+    func setUser(user: UserRepresentation) { self.user = user }
 
+    // MARK: - Get functions
     func getUser() -> UserRepresentation? { return user }
+
+    func getAllClasses() -> [FitnessClass] { return classes }
+
+    func getClassesAttending() -> [FitnessClass] { return classesAttending }
+
+    func getClass(_ index: Int) -> FitnessClass { return classes[index] }
+
+    func getClassAttending(_ index: Int) -> FitnessClass { return classesAttending[index] }
     
     // MARK: - CRUD Methods
 }

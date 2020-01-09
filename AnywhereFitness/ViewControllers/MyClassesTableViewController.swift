@@ -28,24 +28,20 @@ class MyClassesTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return userController?.getClassesAttending().count ?? 0
     }
 
-    /*
-     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-     let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "MyClassesCell", for: indexPath) as? ClassTableViewCell else { return UITableViewCell() }
 
-     // Configure the cell...
+        cell.fitnessClass = userController?.getClassAttending(indexPath.row)
 
-     return cell
-     }
-     */
+        return cell
+    }
 
     /*
      // Override to support conditional editing of the table view.
@@ -82,14 +78,18 @@ class MyClassesTableViewController: UITableViewController {
      }
      */
 
-    /*
-     // MARK: - Navigation
 
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ShowMyClassDetailSegue" {
+            if let indexPath = tableView.indexPathForSelectedRow,
+                let classDetailVC = segue.destination as? ClassDetailViewController {
+                classDetailVC.userController = self.userController
+                classDetailVC.fitnessClass = self.userController?.getClassAttending(indexPath.row)
+            }
+        }
+    }
 
 }
