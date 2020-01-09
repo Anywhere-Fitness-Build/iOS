@@ -23,6 +23,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let launchStoryboard = UIStoryboard(name: "Launch", bundle: nil)
+        let userStoryboard = UIStoryboard(name: "User", bundle: nil)
         var vc: UIViewController
         vc = mainStoryboard.instantiateInitialViewController()!
 
