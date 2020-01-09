@@ -38,7 +38,7 @@ class UserController {
         let requestURL = DatabaseController.sharedDatabaseController.createClassURL
         var request = URLRequest(url:requestURL)
         request.httpMethod = "PUT"
-        request.setValue("application/json", forHTTPHeaderField: token)
+        request.setValue("\(token)", forHTTPHeaderField:"Authorization")
         
         guard let fitnessClassRepresentation = fitnessClass.fitnessClassRepresentation
             else {
