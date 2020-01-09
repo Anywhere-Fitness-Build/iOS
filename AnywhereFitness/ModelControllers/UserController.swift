@@ -30,4 +30,15 @@ class UserController {
     func getClassAttending(_ index: Int) -> FitnessClass { return classesAttending[index] }
     
     // MARK: - CRUD Methods
+    func createClass(_ fitnessClass: FitnessClass) {
+        classes.append(fitnessClass)
+    }
+
+    func updateClass(_ fitnessClass: FitnessClass) {
+
+    }
+
+    func deleteClass(_ fitnessClass: FitnessClass) {
+
+    }
 }

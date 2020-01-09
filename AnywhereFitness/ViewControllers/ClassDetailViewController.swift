@@ -23,6 +23,7 @@ class ClassDetailViewController: UIViewController, ClassDateViewControllerDelega
     @IBOutlet private weak var durationTextField: UITextField!
     @IBOutlet private weak var startTimeLabel: UILabel!
     @IBOutlet private weak var registeredUsersLabel: UILabel!
+    @IBOutlet private weak var registeredUsersTextField: UITextField!
     @IBOutlet private weak var intensityPicker: UIPickerView!
     @IBOutlet private weak var registerButton: UIButton!
     @IBOutlet private weak var intensityLabel: UILabel!
@@ -59,6 +60,7 @@ class ClassDetailViewController: UIViewController, ClassDateViewControllerDelega
             durationTextField.text = fitnessClass.duration
             startTimeLabel.text = fitnessClass.startTime
             registeredUsersLabel.text = "Regi"
+
             intensityPicker.selectedRow(inComponent: Int(fitnessClass.intensity))
             intensityLabelView(intensity: fitnessClass.intensity)
             // register button will change based on user
@@ -81,7 +83,8 @@ class ClassDetailViewController: UIViewController, ClassDateViewControllerDelega
     }
 
     @IBAction func registerButtonTapped() {
-        guard let classNameString = classNameTextField.text,
+        guard let userController = userController,
+            let classNameString = classNameTextField.text,
             !classNameString.isEmpty,
             let classTypeString = classTypeTextField.text,
             !classTypeString.isEmpty,
@@ -93,12 +96,14 @@ class ClassDetailViewController: UIViewController, ClassDateViewControllerDelega
 
 
 
-        let _ = FitnessClass(name: classNameString,
+        let newFitnessClass = FitnessClass(name: classNameString,
                              classType: classTypeString,
                              startTime: startTimeString,
                              duration: durationString,
                              intensity: Double(intensityPicker.selectedRow(inComponent: 1)),
                              location: locationString)
+
+        userController.createClass(newFitnessClass)
 
         self.navigationController?.popViewController(animated: true)
 

@@ -407,6 +407,7 @@
                         <outlet property="locationTextField" destination="i8c-E0-Kyj" id="5pV-aD-d1x"/>
                         <outlet property="registerButton" destination="xNv-pc-EjG" id="abq-Fk-JUG"/>
                         <outlet property="registeredUsersLabel" destination="mB3-aW-ICL" id="pdH-xQ-FNY"/>
+                        <outlet property="registeredUsersTextField" destination="oy5-sT-VFB" id="TQl-PU-SkM"/>
                         <outlet property="startTimeLabel" destination="mhJ-W8-5M3" id="y7I-9h-vHn"/>
                     </connections>
                 </viewController>
