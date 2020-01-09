@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="aXn-8f-Jhc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="aXn-8f-Jhc">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -56,6 +56,7 @@
                                 <state key="normal" title="Login"/>
                                 <connections>
                                     <action selector="loginTappedWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pds-dy-qBH"/>
+                                    <segue destination="Zkv-vO-Z0d" kind="show" id="Gib-6C-BYo"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="es0-o5-lVw">
@@ -216,6 +217,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="27I-lh-ghw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1692.753623188406" y="103.79464285714285"/>
+        </scene>
+        <!--UserLoginNavigation-->
+        <scene sceneID="zyI-L1-54U">
+            <objects>
+                <viewControllerPlaceholder storyboardName="User" referencedIdentifier="UserLoginNavigation" id="Zkv-vO-Z0d" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="TRa-lP-ehR"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3Gx-sV-z7X" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2160" y="516"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="z8o-HU-lGk">

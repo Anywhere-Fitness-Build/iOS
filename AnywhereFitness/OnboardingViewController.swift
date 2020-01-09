@@ -39,8 +39,8 @@ class OnboardingViewController: UIViewController, WalkthroughViewControllerDeleg
         UIView.transition(with: self.view, duration: 1, options: .transitionFlipFromLeft, animations: {
             viewController.view.removeFromSuperview()
 
-            let storyboard = UIStoryboard(name: "Launch", bundle: nil)
-            let viewControllerToBePresented = storyboard.instantiateViewController(withIdentifier: "LoginViewController")
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let viewControllerToBePresented = storyboard.instantiateInitialViewController()!
             self.addChildViewControllerWithView(viewControllerToBePresented)
             self.view.addSubview(viewControllerToBePresented.view)
 

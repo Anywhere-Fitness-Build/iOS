@@ -22,7 +22,7 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
     }
 
-  
+
 
     @IBAction func loginTapped(sender: UIButton) {
         let username = usernameTextField.text!
@@ -30,20 +30,10 @@ class LoginViewController: UIViewController {
         
         let loginUser = UserRepresentation(username:username, password:password)
         databaseController.signIn(with: loginUser){
-             error in
-                               if let error = error {
-                                   print("Error occurred during sign up: \(error)")
-                               } else {
-                                   DispatchQueue.main.async {
-                                       self.dismiss(animated: true, completion: nil)
-                                   }
-       
-     
-                
-
+            error in
+            if let error = error {
+                print("Error occurred during sign up: \(error)")
+            }
+        }
     }
-}
-
-
-}
 }

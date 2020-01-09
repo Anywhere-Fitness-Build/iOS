@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nHh-5F-SaF">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
@@ -227,7 +227,7 @@
         <!--User Tab Bar Controller-->
         <scene sceneID="ojJ-wZ-dQZ">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="nHh-5F-SaF" customClass="UserTabBarController" customModule="AnywhereFitness" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="UserLoginNavigation" automaticallyAdjustsScrollViewInsets="NO" id="nHh-5F-SaF" customClass="UserTabBarController" customModule="AnywhereFitness" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="CdA-7K-U2Y"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="D3H-fV-Es6">

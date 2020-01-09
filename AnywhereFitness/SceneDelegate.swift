@@ -23,18 +23,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let launchStoryboard = UIStoryboard(name: "Launch", bundle: nil)
-        let userStoryboard = UIStoryboard(name: "User", bundle: nil)
         var vc: UIViewController
-        vc = mainStoryboard.instantiateInitialViewController()!
 
         if launchedBefore {
             vc = mainStoryboard.instantiateInitialViewController()!
-           // vc = launchStoryboard.instantiateViewController(withIdentifier: "LoginViewController")
-      //  } else {
-         //   vc = launchStoryboard.instantiateViewController(withIdentifier: "OnboardingViewController")
+        } else {
+            vc = launchStoryboard.instantiateViewController(withIdentifier: "OnboardingViewController")
         }
 
-        //UserDefaults.standard.set(true, forKey: "hasLaunched")
+        UserDefaults.standard.set(true, forKey: "hasLaunched")
 
         // Create a ViewController object and set it as the scene's window's root view controller.
         self.window!.rootViewController = vc
