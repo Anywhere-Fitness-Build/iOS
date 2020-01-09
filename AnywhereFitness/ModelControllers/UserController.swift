@@ -38,6 +38,7 @@ class UserController {
         let requestURL = DatabaseController.sharedDatabaseController.createClassURL
         var request = URLRequest(url:requestURL)
         request.httpMethod = "PUT"
+        request.setValue("application/json", forHTTPHeaderField: token)
         
         guard let fitnessClassRepresentation = fitnessClass.fitnessClassRepresentation
             else {
@@ -60,7 +61,7 @@ class UserController {
                 print("Error putting this class: \(error) line 60 UserController")
                 completion()
             }
-        }.resume() 
+        }.resume()
         
         
         
