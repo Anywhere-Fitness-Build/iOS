@@ -231,6 +231,7 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="CdA-7K-U2Y"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="D3H-fV-Es6">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
@@ -253,7 +254,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="pSc-q9-4OM" userLabel="Detail Stack">
-                                <rect key="frame" x="20" y="150" width="374" height="459.5"/>
+                                <rect key="frame" x="20" y="150" width="374" height="354"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Class Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sQ9-bY-6o9">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="20.5"/>
@@ -317,22 +318,8 @@
                                             </button>
                                         </subviews>
                                     </stackView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Intensity Level" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2d7-nT-crK">
-                                        <rect key="frame" x="0.0" y="278" width="374" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Y4K-Eh-gum">
-                                        <rect key="frame" x="0.0" y="306.5" width="374" height="32"/>
-                                        <segments>
-                                            <segment title="Low"/>
-                                            <segment title="Medium"/>
-                                            <segment title="High"/>
-                                        </segments>
-                                    </segmentedControl>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="89X-W8-WPN">
-                                        <rect key="frame" x="0.0" y="345.5" width="374" height="34"/>
+                                        <rect key="frame" x="0.0" y="278" width="374" height="34"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Duration: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z0R-sQ-T8a">
                                                 <rect key="frame" x="0.0" y="0.0" width="74.5" height="34"/>
@@ -348,7 +335,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="xch-KQ-nkt">
-                                        <rect key="frame" x="0.0" y="387.5" width="374" height="34"/>
+                                        <rect key="frame" x="0.0" y="320" width="374" height="34"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Registered Users:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mB3-aW-ICL">
                                                 <rect key="frame" x="0.0" y="0.0" width="136" height="34"/>
@@ -363,21 +350,50 @@
                                             </textField>
                                         </subviews>
                                     </stackView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xNv-pc-EjG">
-                                        <rect key="frame" x="0.0" y="429.5" width="374" height="30"/>
-                                        <state key="normal" title="Sign Up!"/>
-                                        <connections>
-                                            <action selector="registerButtonTapped" destination="ube-iD-NeB" eventType="touchUpInside" id="7cF-sh-wYU"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Low" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hxT-gK-rp1">
+                                <rect key="frame" x="327" y="551" width="67" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Intensity Level" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2d7-nT-crK">
+                                <rect key="frame" x="20" y="551" width="109.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xNv-pc-EjG">
+                                <rect key="frame" x="20" y="716.5" width="374" height="30"/>
+                                <state key="normal" title="Sign Up!"/>
+                                <connections>
+                                    <action selector="registerButtonTapped" destination="ube-iD-NeB" eventType="touchUpInside" id="7cF-sh-wYU"/>
+                                </connections>
+                            </button>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xnr-s0-WvT">
+                                <rect key="frame" x="159" y="521.5" width="160" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="2s3-hU-dDG"/>
+                                    <constraint firstAttribute="width" constant="160" id="W1y-Op-tbt"/>
+                                </constraints>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="Xnr-s0-WvT" firstAttribute="centerY" secondItem="2d7-nT-crK" secondAttribute="centerY" id="0qo-y5-Nem"/>
+                            <constraint firstItem="xNv-pc-EjG" firstAttribute="leading" secondItem="2d7-nT-crK" secondAttribute="leading" id="AOg-Tf-tah"/>
+                            <constraint firstItem="Xnr-s0-WvT" firstAttribute="leading" secondItem="2d7-nT-crK" secondAttribute="trailing" constant="29.5" id="Gm8-pF-zga"/>
                             <constraint firstItem="pSc-q9-4OM" firstAttribute="top" secondItem="SGy-My-oa4" secondAttribute="top" constant="10" id="L40-LO-klP"/>
                             <constraint firstItem="pSc-q9-4OM" firstAttribute="leading" secondItem="SGy-My-oa4" secondAttribute="leading" constant="20" id="Mq9-06-Njb"/>
                             <constraint firstItem="SGy-My-oa4" firstAttribute="trailing" secondItem="pSc-q9-4OM" secondAttribute="trailing" constant="20" id="XCL-c5-lkN"/>
+                            <constraint firstItem="2d7-nT-crK" firstAttribute="top" secondItem="pSc-q9-4OM" secondAttribute="bottom" constant="47" id="egC-Pg-tWe"/>
+                            <constraint firstItem="hxT-gK-rp1" firstAttribute="leading" relation="lessThanOrEqual" secondItem="Xnr-s0-WvT" secondAttribute="trailing" constant="8" symbolic="YES" id="ezW-hw-UIv"/>
+                            <constraint firstItem="hxT-gK-rp1" firstAttribute="centerY" secondItem="2d7-nT-crK" secondAttribute="centerY" id="jX8-Dt-IaR"/>
+                            <constraint firstItem="xNv-pc-EjG" firstAttribute="trailing" secondItem="hxT-gK-rp1" secondAttribute="trailing" id="scn-3Y-HWF"/>
+                            <constraint firstItem="2d7-nT-crK" firstAttribute="leading" secondItem="pSc-q9-4OM" secondAttribute="leading" id="vTW-T7-G5C"/>
+                            <constraint firstItem="xNv-pc-EjG" firstAttribute="top" secondItem="Xnr-s0-WvT" secondAttribute="bottom" constant="115" id="vpL-cQ-bgm"/>
+                            <constraint firstItem="hxT-gK-rp1" firstAttribute="trailing" secondItem="pSc-q9-4OM" secondAttribute="trailing" id="wQb-zE-haj"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="SGy-My-oa4"/>
                     </view>
@@ -386,7 +402,8 @@
                         <outlet property="classNameTextField" destination="9g1-2B-f6N" id="HtH-AX-ZxU"/>
                         <outlet property="classTypeTextField" destination="R41-QI-xvI" id="AlT-mQ-2oa"/>
                         <outlet property="durationTextField" destination="QQt-TG-2TL" id="CoC-bX-xMM"/>
-                        <outlet property="intensitySegmentedControl" destination="Y4K-Eh-gum" id="vJI-ir-B4w"/>
+                        <outlet property="intensityLabel" destination="hxT-gK-rp1" id="wGQ-6x-idr"/>
+                        <outlet property="intensityPicker" destination="Xnr-s0-WvT" id="Xjf-qY-8FQ"/>
                         <outlet property="locationTextField" destination="i8c-E0-Kyj" id="5pV-aD-d1x"/>
                         <outlet property="registerButton" destination="xNv-pc-EjG" id="abq-Fk-JUG"/>
                         <outlet property="registeredUsersLabel" destination="mB3-aW-ICL" id="pdH-xQ-FNY"/>
