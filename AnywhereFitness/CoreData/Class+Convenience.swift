@@ -16,10 +16,8 @@ extension FitnessClass{
     let classType = classType,
     let startTime = startTime,
     let duration = duration,
-    //let intensity = intensity,
     let location = location
-        //maxsize
-     else {return nil}
+    else {return nil}
      
      
    

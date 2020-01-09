@@ -7,7 +7,7 @@
 //
 
 import Foundation
-struct FitnessClassRepresentation {
+struct FitnessClassRepresentation: Codable {
     var name:String
     var classType:String
     var startTime:String
