@@ -30,6 +30,10 @@ class UserController {
     func getClassAttending(_ index: Int) -> FitnessClass { return classesAttending[index] }
     
     // MARK: - CRUD Methods
+    
+    func putClass(fitnessClass:FitnessClass, completion: @escaping () -> Void = {}) {
+        let token = user
+    }
     func createClass(_ fitnessClass: FitnessClass) {
         classes.append(fitnessClass)
     }

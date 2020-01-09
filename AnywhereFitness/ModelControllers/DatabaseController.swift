@@ -25,6 +25,7 @@ enum NetworkError: Error {
 }
 
 class DatabaseController {
+    static let sharedDatabaseController = DatabaseController()
     
     private let baseUrl = URL(string: "https://anywhere-fitness-bw.herokuapp.com")!
     private let signUpUrl = URL(string:"https://anywhere-fitness-bw.herokuapp.com/auth/register/")!

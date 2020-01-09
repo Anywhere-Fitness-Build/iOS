@@ -9,7 +9,7 @@
 import UIKit
 
 class LoginViewController: UIViewController {
-    var databaseController = DatabaseController()
+   // var databaseController = DatabaseController()
     
 
     // MARK: - IBOutlets
@@ -32,7 +32,7 @@ class LoginViewController: UIViewController {
 
         
         let loginUser = UserRepresentation(username:username, password:password)
-        databaseController.signIn(with: loginUser){
+        DatabaseController.sharedDatabaseController.signIn(with: loginUser){
             error in
             if let error = error {
                 print("Error occurred during sign up: \(error)")
