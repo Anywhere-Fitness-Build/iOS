@@ -10,7 +10,7 @@ import Foundation
 import CoreData
 
 class UserController {
-
+    
     private var user: UserRepresentation?
     private var classes = [FitnessClass]()
     private var classesAttending = [FitnessClass]()
@@ -32,7 +32,38 @@ class UserController {
     // MARK: - CRUD Methods
     
     func putClass(fitnessClass:FitnessClass, completion: @escaping () -> Void = {}) {
-        let token = user
+       guard let token = DatabaseController.sharedDatabaseController.loginStruct?.token,
+        let userID = DatabaseController.sharedDatabaseController.roleID?.roleId else { print ("putClass returning with either nill token or userID"); return }
+        
+        let requestURL = DatabaseController.sharedDatabaseController.createClassURL
+        var request = URLRequest(url:requestURL)
+        request.httpMethod = "PUT"
+        
+        guard let fitnessClassRepresentation = fitnessClass.fitnessClassRepresentation
+            else {
+                print("Failed to assign a fitnessClassRepresentation line 44 UserController")
+                return
+        }
+        
+        do {
+            request.httpBody = try JSONEncoder().encode(fitnessClassRepresentation)
+            
+        } catch {
+            print("Error encoding the fitnessClassrepresentation line 52 UserController")
+            completion()
+            return
+        }
+        
+        URLSession.shared.dataTask(with:request){ (_,_, error) in
+            
+            if let error = error {
+                print("Error putting this class: \(error) line 60 UserController")
+                completion()
+            }
+        }.resume() 
+        
+        
+        
     }
     func createClass(_ fitnessClass: FitnessClass) {
         classes.append(fitnessClass)

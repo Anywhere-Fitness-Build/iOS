@@ -29,6 +29,9 @@ class DatabaseController {
     
     private let baseUrl = URL(string: "https://anywhere-fitness-bw.herokuapp.com")!
     private let signUpUrl = URL(string:"https://anywhere-fitness-bw.herokuapp.com/auth/register/")!
+    
+    let createClassURL = URL(string: "https://anywhere-fitness-bw.herokuapp.com/classes")!
+    
     var loginStruct:LoginStruct?
     var roleID:RoleID? //user receives a roleID on signup
     
