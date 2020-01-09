@@ -132,7 +132,7 @@
         <!--Welcome User!-->
         <scene sceneID="BTi-Lr-ZiH">
             <objects>
-                <tableViewController storyboardIdentifier="MyClassesTableViewController" id="Mls-c6-TvD" customClass="MyClassesTableViewController" customModule="AnywhereFitness" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="Mls-c6-TvD" customClass="MyClassesTableViewController" customModule="AnywhereFitness" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="GF1-eq-WJp">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -477,6 +477,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="51c-eL-r7M"/>
+        <segue reference="VAa-s2-xSo"/>
     </inferredMetricsTieBreakers>
 </document>

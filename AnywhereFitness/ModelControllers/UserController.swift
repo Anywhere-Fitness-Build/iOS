@@ -9,4 +9,17 @@
 import Foundation
 import CoreData
 
+class UserController {
 
+    private var user: UserRepresentation?
+    private var classes = [FitnessClass]()
+    private var classesAttending = [FitnessClass]()
+
+    func setUser(user: UserRepresentation) {
+        self.user = user
+    }
+
+    func getUser() -> UserRepresentation? { return user }
+    
+    // MARK: - CRUD Methods
+}

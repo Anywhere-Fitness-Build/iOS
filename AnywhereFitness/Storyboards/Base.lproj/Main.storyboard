@@ -56,7 +56,6 @@
                                 <state key="normal" title="Login"/>
                                 <connections>
                                     <action selector="loginTappedWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pds-dy-qBH"/>
-                                    <segue destination="Zkv-vO-Z0d" kind="show" id="Gib-6C-BYo"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="es0-o5-lVw">
@@ -104,6 +103,7 @@
                     <connections>
                         <outlet property="passwordTextField" destination="HsF-rx-Fnt" id="cgs-fL-Q2o"/>
                         <outlet property="usernameTextField" destination="DKh-T6-cJ0" id="Q3T-FR-cRF"/>
+                        <segue destination="Zkv-vO-Z0d" kind="show" identifier="ShowUserSegue" id="5yZ-zE-gwz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -226,7 +226,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Gx-sV-z7X" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2160" y="516"/>
+            <point key="canvasLocation" x="1063" y="-382"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="z8o-HU-lGk">
