@@ -79,7 +79,22 @@ class UserController {
 
     }
 
-    func deleteClass(_ fitnessClass: FitnessClass) {
+//    func deleteClass(_ fitnessClass: FitnessClass) {
+//        guard let fitnessClassRep = fitnessClass.fitnessClassRepresentation,
+//            let index = classes.firstIndex(of:fitnessClassRep) else {return}
+//        classes.remove(at:index)
+//
+//        CoreDataStack.shared.mainContext.delete(fitnessClass)
+//        CoreDataStack.shared.save()
+    
+    func deleteClass(_ fitnessClassRep: FitnessClassRepresentation) {
+       
+        guard let index = classesAttending.firstIndex(of:fitnessClassRep) else {print("returning nill out of deleteClass"); return}
+        classesAttending.remove(at:index)
+        
+  
+        
+        
 
     }
 }

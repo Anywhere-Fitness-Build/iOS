@@ -7,7 +7,7 @@
 //
 
 import Foundation
-struct UserRepresentation: Codable {
+struct UserRepresentation: Codable, Equatable {
     var username:String
     var password: String
     var isInstructor: Bool?
