@@ -9,7 +9,7 @@
 import Foundation
 struct FitnessClassRepresentation: Codable {
     var name:String
-    var classType:String
+    var type:String
     var startTime:String
     var duration:String
     var intensity: Double

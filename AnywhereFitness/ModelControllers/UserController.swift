@@ -12,22 +12,25 @@ import CoreData
 class UserController {
     
     private var user: UserRepresentation?
-    private var classes = [FitnessClass]()
-    private var classesAttending = [FitnessClass]()
+    private var classes = [FitnessClassRepresentation]()
+    private var classesAttending = [FitnessClassRepresentation]()
 
     // MARK: - Set functions
-    func setUser(user: UserRepresentation) { self.user = user }
+    func setUser(user: UserRepresentation, fitnessClasses: [FitnessClassRepresentation]) {
+        self.user = user
+        self.classes = fitnessClasses
+    }
 
     // MARK: - Get functions
     func getUser() -> UserRepresentation? { return user }
 
-    func getAllClasses() -> [FitnessClass] { return classes }
+    func getAllClasses() -> [FitnessClassRepresentation] { return classes }
 
-    func getClassesAttending() -> [FitnessClass] { return classesAttending }
+    func getClassesAttending() -> [FitnessClassRepresentation] { return classesAttending }
 
-    func getClass(_ index: Int) -> FitnessClass { return classes[index] }
+    func getClass(_ index: Int) -> FitnessClassRepresentation { return classes[index] }
 
-    func getClassAttending(_ index: Int) -> FitnessClass { return classesAttending[index] }
+    func getClassAttending(_ index: Int) -> FitnessClassRepresentation { return classesAttending[index] }
     
     // MARK: - CRUD Methods
     
@@ -66,7 +69,8 @@ class UserController {
         
         
     }
-    func createClass(_ fitnessClass: FitnessClass) {
+    
+    func createClass(_ fitnessClass: FitnessClassRepresentation) {
         classes.append(fitnessClass)
     }
 

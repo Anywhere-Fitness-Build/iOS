@@ -22,7 +22,7 @@ extension FitnessClass{
      
    
      
-    return FitnessClassRepresentation(name:name, classType:classType, startTime:startTime, duration:duration, intensity:intensity, location:location, maxSize:maxSize )
+    return FitnessClassRepresentation(name:name, type:classType, startTime:startTime, duration:duration, intensity:intensity, location:location, maxSize:maxSize )
   }
   @discardableResult convenience init(name:String,
                     classType:String,
@@ -47,7 +47,7 @@ extension FitnessClass{
     
     self.init(
         name: fitnessClassRepresentation.name,
-        classType: fitnessClassRepresentation.classType,
+        classType: fitnessClassRepresentation.type,
         startTime: fitnessClassRepresentation.startTime,
         duration:fitnessClassRepresentation.duration,
         intensity:fitnessClassRepresentation.intensity,

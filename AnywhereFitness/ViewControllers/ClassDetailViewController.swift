@@ -30,7 +30,7 @@ class ClassDetailViewController: UIViewController, ClassDateViewControllerDelega
 
     // MARK: - Properties
     var userController: UserController?
-    var fitnessClass: FitnessClass?
+    var fitnessClass: FitnessClassRepresentation?
 
     var dateFormatter: DateFormatter {
         let formatter = DateFormatter()
@@ -55,14 +55,18 @@ class ClassDetailViewController: UIViewController, ClassDateViewControllerDelega
     private func updateViews() {
         if let fitnessClass = fitnessClass {
             classNameTextField.text = fitnessClass.name
-            classTypeTextField.text = fitnessClass.classType
+            classTypeTextField.text = fitnessClass.type
             locationTextField.text = fitnessClass.location
             durationTextField.text = fitnessClass.duration
             startTimeLabel.text = fitnessClass.startTime
             registeredUsersLabel.text = "Regi"
 
-            intensityPicker.selectedRow(inComponent: Int(fitnessClass.intensity))
-            intensityLabelView(intensity: fitnessClass.intensity)
+            var intensity = abs(fitnessClass.intensity)
+            if intensity > 10 {
+                intensity = intensity / 10
+            }
+            intensityPicker.selectRow(Int(intensity - 1), inComponent: 0, animated: false)
+            intensityLabelView(intensity: intensity)
             // register button will change based on user
         }
 
@@ -96,14 +100,14 @@ class ClassDetailViewController: UIViewController, ClassDateViewControllerDelega
 
 
 
-        let newFitnessClass = FitnessClass(name: classNameString,
-                             classType: classTypeString,
-                             startTime: startTimeString,
-                             duration: durationString,
-                             intensity: Double(intensityPicker.selectedRow(inComponent: 1)),
-                             location: locationString)
-
-        userController.createClass(newFitnessClass)
+//        let newFitnessClass = FitnessClass(name: classNameString,
+//                             classType: classTypeString,
+//                             startTime: startTimeString,
+//                             duration: durationString,
+//                             intensity: Double(intensityPicker.selectedRow(inComponent: 0)),
+//                             location: locationString)
+//
+//        userController.createClass(newFitnessClass)
 
         self.navigationController?.popViewController(animated: true)
 

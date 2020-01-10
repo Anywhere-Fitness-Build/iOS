@@ -137,5 +137,40 @@ class DatabaseController {
         }.resume()
     }
 
+
+    func getAllClasses(completion: @escaping ([FitnessClassRepresentation]?, Error?) -> Void) {
+        guard let token = loginStruct?.token else {
+            completion(nil, NSError())
+            return
+        }
+
+        let allClassesURL = baseUrl.appendingPathComponent("classes")
+
+        var request = URLRequest(url: allClassesURL)
+        request.httpMethod = HTTPMethod.get.rawValue
+        request.addValue(token, forHTTPHeaderField: "Authorization")
+
+        URLSession.shared.dataTask(with: request) { data, _, error in
+            if let _ = error {
+                print("Error")
+                completion(nil, error)
+                return
+            }
+            guard let data = data else {
+                print("Bad Data")
+                return
+            }
+
+            let decoder = JSONDecoder()
+            decoder.keyDecodingStrategy = .convertFromSnakeCase
+            do {
+                let fitnessClasses = try decoder.decode([FitnessClassRepresentation].self, from: data)
+                completion(fitnessClasses, nil)
+            } catch {
+                print("Error decoding")
+                completion(nil, error)
+            }
+        }.resume()
+    }
 }
 

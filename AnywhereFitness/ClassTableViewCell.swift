@@ -16,7 +16,7 @@ class ClassTableViewCell: UITableViewCell {
     @IBOutlet private weak var dateLabel: UILabel!
     @IBOutlet private weak var locationLabel: UILabel!
 
-    var fitnessClass: FitnessClass? {
+    var fitnessClass: FitnessClassRepresentation? {
         didSet {
             updateViews()
         }
@@ -31,4 +31,15 @@ class ClassTableViewCell: UITableViewCell {
         dateLabel.text = fitnessClass.startTime
         locationLabel.text = fitnessClass.location
     }
+
+    private func dateFormatter(_ isoDateString: String) -> String {
+        let isoDateFormatter = ISO8601DateFormatter()
+        let date = isoDateFormatter.date(from: isoDateString)
+
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMM d, h:mm a"
+        return dateFormatter.string(from: date!)
+    }
+
+
 }
