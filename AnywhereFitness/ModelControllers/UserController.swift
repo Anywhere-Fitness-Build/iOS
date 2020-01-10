@@ -45,14 +45,15 @@ class UserController {
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.setValue(token, forHTTPHeaderField: "Authorization")
         
-        guard let fitnessClassRepresentation = fitnessClass.fitnessClassRepresentation
+        guard var fitnessClassRepresentation = fitnessClass.fitnessClassRepresentation
             else {
                 print("Failed to assign a fitnessClassRepresentation line 44 UserController")
                 return
         }
         
         do {
-            request.httpBody = try JSONEncoder().encode(fitnessClassRepresentation)
+            let fitnessClassRequestBody = FitnessClassRequest(fitnessClassRepresentation)
+            request.httpBody = try JSONEncoder().encode(fitnessClassRequestBody)
             
         } catch {
             print("Error encoding the fitnessClassrepresentation line 52 UserController")
@@ -60,20 +61,30 @@ class UserController {
             return
         }
         
-        URLSession.shared.dataTask(with:request){ (_,_, error) in
+        URLSession.shared.dataTask(with:request){ ( data,_, error) in
             
             if let error = error {
                 print("Error putting this class: \(error) line 60 UserController")
                 completion()
             }
-            print("\(fitnessClassRepresentation.classId) is my classId") 
-            self.classes.append(fitnessClassRepresentation)
-            
-           
-            
-            
-            
-            completion()
+
+            guard let data = data else {
+                print("Bad Data")
+                return
+            }
+
+            let decoder = JSONDecoder()
+            decoder.keyDecodingStrategy = .convertFromSnakeCase
+            do {
+                let fitnessClass = try decoder.decode(FitnessClassRepresentation.self, from: data)
+                fitnessClassRepresentation.id = fitnessClass.id
+                self.classes.append(fitnessClassRepresentation)
+                completion()
+
+            } catch {
+                print("Error decoding")
+                completion()
+            }
         }.resume()
         
     }
@@ -122,9 +133,10 @@ class UserController {
         
         
     }
+
     func testForID(){
         for classes in self.classes {
-            print( classes.classId)
+            print( classes.id)
         }
     }
 

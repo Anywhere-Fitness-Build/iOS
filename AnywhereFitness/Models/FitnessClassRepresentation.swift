@@ -8,6 +8,7 @@
 
 import Foundation
 struct FitnessClassRepresentation: Codable, Equatable {
+    var id: Int
     var name:String
     var type:String
     var startTime:String
@@ -15,12 +16,13 @@ struct FitnessClassRepresentation: Codable, Equatable {
     var intensity: Int
     var location:String
     var maxSize: Int
-    var classId:Int?
+
    
     //var instructorId:Int 
 }
-enum CodingKeys:String, CodingKey {
-    case classId = "id"
-   
-   // case instructorId = "instructor_id"
-}
+//
+//enum CodingKeys:String, CodingKey {
+//    case classId = "id"
+//   
+//   // case instructorId = "instructor_id"
+//}

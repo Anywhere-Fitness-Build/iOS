@@ -18,8 +18,7 @@ extension FitnessClass{
     let startTime = startTime,
     let duration = duration,
     let location = location
-   
- 
+    
     else {return nil}
      
      /* struct FitnessClassRepresentation: Codable, Equatable {
@@ -35,7 +34,7 @@ extension FitnessClass{
      var instructorName:String*/
    
      
-    return FitnessClassRepresentation(name:name, type:classType!, startTime:startTime, duration:duration, intensity:Int(intensity),location:location, maxSize:Int(maxSize))
+    return FitnessClassRepresentation(id: 0, name:name, type: type, startTime:startTime, duration:duration, intensity:Int(intensity),location:location, maxSize:Int(maxSize))
   }
   @discardableResult convenience init(name:String,
                     classType:String,

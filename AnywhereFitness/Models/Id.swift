@@ -7,9 +7,26 @@
 //
 
 import Foundation
-struct Id: Codable  {
-    var id:Int
-    
+
+struct FitnessClassRequest: Codable {
+    var name:String
+    var type:String
+    var startTime:String
+    var duration:String
+    var intensity: Int
+    var location:String
+    var maxSize: Int
+
+    init(_ fitnessClassRep: FitnessClassRepresentation) {
+        self.name = fitnessClassRep.name
+        self.type = fitnessClassRep.type
+        self.startTime = fitnessClassRep.startTime
+        self.duration = fitnessClassRep.startTime
+        self.intensity = fitnessClassRep.intensity
+        self.location = fitnessClassRep.location
+        self.maxSize = fitnessClassRep.maxSize
+    }
+
 }
 
 

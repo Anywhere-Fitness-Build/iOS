@@ -62,7 +62,7 @@ class ClassDetailViewController: UIViewController, ClassDateViewControllerDelega
             startTimeLabel.text = fitnessClass.startTime
             registeredUsersTextField.text = String(fitnessClass.maxSize)
             registeredUsersLabel.text = "Class Size"
-
+            print(fitnessClass.id)
             var intensity = abs(fitnessClass.intensity)
             if intensity > 10 {
                 intensity = intensity / 10
@@ -104,7 +104,6 @@ class ClassDetailViewController: UIViewController, ClassDateViewControllerDelega
             !durationString.isEmpty,
             let sizeString = registeredUsersTextField.text,
             !sizeString.isEmpty,
-            //
             let startTimeString = startTimeLabel.text else { return }
 
             if let fitnessClass = fitnessClass {
@@ -113,7 +112,7 @@ class ClassDetailViewController: UIViewController, ClassDateViewControllerDelega
                     self.navigationController?.popViewController(animated: true)
                 }
             } else {
-                var i = intensityPicker.selectedRow(inComponent: 0) + 1
+                let i = intensityPicker.selectedRow(inComponent: 0) + 1
                 let newfitnessClass = FitnessClass(name: classNameString,
                                                 classType: classTypeString,
                                                 startTime: startTimeString,
