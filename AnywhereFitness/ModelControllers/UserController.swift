@@ -97,41 +97,37 @@ class UserController {
 
     }
 
-//    func deleteClass(_ fitnessClass: FitnessClass) {
-//        guard let fitnessClassRep = fitnessClass.fitnessClassRepresentation,
-//            let index = classes.firstIndex(of:fitnessClassRep) else {return}
-//        classes.remove(at:index)
-//
-//        CoreDataStack.shared.mainContext.delete(fitnessClass)
-//        CoreDataStack.shared.save()
-    
     func deleteClass(_ fitnessClassRep: FitnessClassRepresentation) {
        //deletes a class that the user is attending from classesAttending. 
         guard let index = classesAttending.firstIndex(of:fitnessClassRep) else {print("returning nill out of deleteClass"); return}
         classesAttending.remove(at:index)
-        
-  
-        
-        
-
     }
     
-    func deleteClassFromServer(_ fitnessClassRep:FitnessClassRepresentation){
-       //instructors ability to remove a class
-        
-        guard let index = classes.firstIndex(of: fitnessClassRep) else
-        {print("returning nill out of deleteClassFromSever"); return}
-        classes.remove(at:index)
-        
-        //get class by id
-        //do DELETE request to /classes/5
-        
-        
-        
-        
-        
-        
-        
+    func deleteClassFromServer(_ fitnessClassRep:FitnessClassRepresentation, completion: @escaping (Error?) -> Void){
+
+        guard let token = DatabaseController.sharedDatabaseController.loginStruct?.token else { print ("putClass returning with either nill token or userID"); return }
+
+        var requestURL = DatabaseController.sharedDatabaseController.createClassURL
+        requestURL.appendPathComponent("\(fitnessClassRep.id)")
+
+        var request = URLRequest(url: requestURL)
+        request.httpMethod = "DELETE"
+        request.addValue(token, forHTTPHeaderField: "Authorization")
+
+        URLSession.shared.dataTask(with: request) { _, response, error in
+            if let response = response {
+                print(response)
+            }
+            if let _ = error {
+                print("Error")
+                completion(error)
+                return
+            }
+            guard let index = self.classes.firstIndex(of: fitnessClassRep) else
+            {print("returning nill out of deleteClassFromSever"); return}
+            self.classes.remove(at:index)
+            completion(nil)
+        }.resume()
     }
 
     func testForID(){
