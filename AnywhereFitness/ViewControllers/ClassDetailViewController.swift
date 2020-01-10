@@ -120,8 +120,8 @@ class ClassDetailViewController: UIViewController, ClassDateViewControllerDelega
                                                 duration: durationString,
                                                 intensity: Double(i) ,
                                                 location: locationString,
-                                                maxSize: Double(sizeString),
-                                                classId:fitnessClass?.classId ?? 221)
+                                                maxSize: Double(sizeString))
+                                                
                                     
                                                
                                               

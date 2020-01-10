@@ -44,7 +44,7 @@ extension FitnessClass{
                     intensity:Double?,
                     location:String,
                     maxSize:Double?,
-                    classId:Int,
+                    //classId:Int,
                     
                     
                     context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
@@ -69,8 +69,8 @@ extension FitnessClass{
         duration: fitnessClassRepresentation.duration,
         intensity:Double(fitnessClassRepresentation.intensity),
         location: fitnessClassRepresentation.location,
-        maxSize:Double(fitnessClassRepresentation.maxSize),
-        classId: fitnessClassRepresentation.classId ?? 222
+        maxSize:Double(fitnessClassRepresentation.maxSize)
+        //classId: fitnessClassRepresentation.classId ?? 222
         
        )
         
