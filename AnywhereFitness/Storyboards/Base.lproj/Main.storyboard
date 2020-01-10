@@ -44,6 +44,7 @@
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HsF-rx-Fnt">
                                 <rect key="frame" x="119" y="382.5" width="223" height="34"/>
+                                <accessibility key="accessibilityConfiguration" identifier="LoginViewController.passwordTextField"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="9HJ-HJ-mRu"/>
                                 </constraints>
@@ -52,6 +53,7 @@
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pMX-o5-6FY">
                                 <rect key="frame" x="171" y="449" width="72" height="50"/>
+                                <accessibility key="accessibilityConfiguration" identifier="LoginViewController.loginButton"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="Login"/>
                                 <connections>
@@ -60,6 +62,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="es0-o5-lVw">
                                 <rect key="frame" x="159" y="491" width="107" height="55"/>
+                                <accessibility key="accessibilityConfiguration" identifier="LoginViewController.signupButton"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="Sign Up"/>
                                 <connections>
@@ -68,6 +71,7 @@
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DKh-T6-cJ0">
                                 <rect key="frame" x="119" y="333.5" width="223" height="32"/>
+                                <accessibility key="accessibilityConfiguration" identifier="LoginViewController.usernameTextField"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>

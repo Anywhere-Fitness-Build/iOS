@@ -12,7 +12,7 @@ import CoreData
 class UserController {
     
     private var user: UserRepresentation?
-    private var classes = [FitnessClassRepresentation]()
+    var classes = [FitnessClassRepresentation]()
     private var classesAttending = [FitnessClassRepresentation]()
 
     // MARK: - Set functions

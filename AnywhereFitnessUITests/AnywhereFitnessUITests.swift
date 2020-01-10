@@ -19,7 +19,38 @@ class AnywhereFitnessUITests: XCTestCase {
 
     func testInitalWelcomeUser() {
         let app = XCUIApplication()
-        XCTAssertTrue(app.navigationBars["Welcome User!"].exists)
+
+        let usernameTextField = app.textFields["LoginViewController.usernameTextField"]
+        let passwordTextField = app.textFields["LoginViewController.passwordTextField"]
+        let loginButton = app.buttons["LoginViewController.loginButton"]
+        XCTAssert(usernameTextField.exists)
+        XCTAssert(passwordTextField.exists)
+        XCTAssert(loginButton.exists)
+        usernameTextField.tap()
+        usernameTextField.typeText("test")
+        passwordTextField.tap()
+        UIPasteboard.general.string = "password"
+        passwordTextField.doubleTap()
+        app.menuItems["Paste"].tap()
+
+        let title = app.navigationBars["Welcome test!"]
+        let exists = NSPredicate(format: "exists == true")
+        expectation(for: exists, evaluatedWith: title, handler: nil)
+
+        loginButton.tap()
+
+        waitForExpectations(timeout: 10, handler: nil)
+        XCTAssert(title.exists)
+    }
+
+    func testSignUp() {
+        let app = XCUIApplication()
+        let signUpButton = app.buttons["LoginViewController.signupButton"]
+        XCTAssert(signUpButton.exists)
+        signUpButton.tap()
+        let signUpLabel = app.staticTexts["Sign Up"]
+        XCTAssert(signUpLabel.exists)
+
     }
 
     func testLaunchPerformance() {
