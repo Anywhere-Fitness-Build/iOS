@@ -34,7 +34,7 @@ class DatabaseController {
     
     var loginStruct:LoginStruct?
     var roleID:RoleID? //user receives a roleID on signup
-    
+
     
     func signUp(with user: UserRepresentation, completion: @escaping (Error?) -> ()) {
        

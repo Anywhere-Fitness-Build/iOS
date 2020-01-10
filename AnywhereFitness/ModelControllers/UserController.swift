@@ -37,6 +37,9 @@ class UserController {
     func createFitnessClass(fitnessClass:FitnessClass, completion: @escaping () -> Void) {
        guard let token = DatabaseController.sharedDatabaseController.loginStruct?.token else { print ("putClass returning with either nill token or userID"); return }
         
+        var classIDPlaceHolder:Double? // assign to classID in CreateClassVC
+        var instructorNamePlaceHolder:String? //assign to instructorname in CreateClassVC
+        
         let requestURL = DatabaseController.sharedDatabaseController.createClassURL
         var request = URLRequest(url:requestURL)
         request.httpMethod = "POST"
@@ -66,6 +69,10 @@ class UserController {
             }
 
             self.classes.append(fitnessClassRepresentation)
+            fitnessClass.classId = Double(fitnessClassRepresentation.classId)
+            fitnessClass.instructorName = fitnessClassRepresentation.instructorName
+            classIDPlaceHolder = Double(fitnessClassRepresentation.classId)
+            instructorNamePlaceHolder = fitnessClassRepresentation.instructorName
             completion()
         }.resume()
         

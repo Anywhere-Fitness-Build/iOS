@@ -104,29 +104,36 @@ class ClassDetailViewController: UIViewController, ClassDateViewControllerDelega
             !durationString.isEmpty,
             let sizeString = registeredUsersTextField.text,
             !sizeString.isEmpty,
+            //
             let startTimeString = startTimeLabel.text else { return }
 
-        if let fitnessClass = fitnessClass {
-            userController.joinAClass(fitnessClass)
-            DispatchQueue.main.async {
-                self.navigationController?.popViewController(animated: true)
-            }
-        } else {
-            let fitnessClass = FitnessClass(name: classNameString,
-                                            classType: classTypeString,
-                                            startTime: startTimeString,
-                                            duration: durationString,
-                                            intensity: Double(intensityPicker.selectedRow(inComponent: 0) + 1),
-                                            location: locationString,
-                                            maxSize: Double(sizeString))
-
-            userController.createFitnessClass(fitnessClass: fitnessClass, completion: {
+            if let fitnessClass = fitnessClass {
+                userController.joinAClass(fitnessClass)
                 DispatchQueue.main.async {
                     self.navigationController?.popViewController(animated: true)
                 }
-            })
-        }
-    }
+            } else {
+                var i = intensityPicker.selectedRow(inComponent: 0) + 1
+                let newfitnessClass = FitnessClass(name: classNameString,
+                                                classType: classTypeString,
+                                                startTime: startTimeString,
+                                                duration: durationString,
+                                                intensity: Double(i) ,
+                                                
+                                                location: locationString,
+                                                maxSize: Double(sizeString),
+                                                classId: 222,
+                                                instructorName: "Placeholder Coach")
+                                              
+
+                userController.createFitnessClass(fitnessClass: newfitnessClass, completion: {
+                    DispatchQueue.main.async {
+                        self.navigationController?.popViewController(animated: true)
+                    }
+                })
+        }}
+        
+
 
     func saveDateButtonWasPressed(date: Date) {
         startTimeLabel.text = dateFormatter.string(from: date)
@@ -163,3 +170,4 @@ extension ClassDetailViewController: UIPickerViewDelegate, UIPickerViewDataSourc
         return intensityPickerList[row]
     }
 }
+
