@@ -20,6 +20,7 @@ class MyClassesTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         updateViews()
+        userController?.testForID()
     }
 
     private func updateViews() {

@@ -119,11 +119,11 @@ class ClassDetailViewController: UIViewController, ClassDateViewControllerDelega
                                                 startTime: startTimeString,
                                                 duration: durationString,
                                                 intensity: Double(i) ,
-                                                
                                                 location: locationString,
                                                 maxSize: Double(sizeString),
-                                                classId: 222,
-                                                instructorName: "Placeholder Coach")
+                                                classId:fitnessClass?.classId ?? 221)
+                                    
+                                               
                                               
 
                 userController.createFitnessClass(fitnessClass: newfitnessClass, completion: {

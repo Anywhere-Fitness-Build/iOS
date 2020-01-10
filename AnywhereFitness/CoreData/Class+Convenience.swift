@@ -6,6 +6,7 @@
 //  Copyright © 2020 Lambda_School_Loaner_219. All rights reserved.
 //
 
+
 import Foundation
 import CoreData
 
@@ -16,8 +17,8 @@ extension FitnessClass{
     let type = classType,
     let startTime = startTime,
     let duration = duration,
-    let location = location,
-    let instructorName = instructorName
+    let location = location
+   
  
     else {return nil}
      
@@ -34,7 +35,7 @@ extension FitnessClass{
      var instructorName:String*/
    
      
-    return FitnessClassRepresentation(name:name, type:classType!, startTime:startTime, duration:duration, intensity:Int(intensity),location:location, maxSize:Int(maxSize), classId:Int(classId), instructorName:instructorName)
+    return FitnessClassRepresentation(name:name, type:classType!, startTime:startTime, duration:duration, intensity:Int(intensity),location:location, maxSize:Int(maxSize))
   }
   @discardableResult convenience init(name:String,
                     classType:String,
@@ -43,8 +44,8 @@ extension FitnessClass{
                     intensity:Double?,
                     location:String,
                     maxSize:Double?,
-                    classId:Double,
-                    instructorName:String,
+                    classId:Int,
+                    
                     
                     context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
     self.init(context:context)
@@ -55,7 +56,7 @@ extension FitnessClass{
     self.intensity = intensity ?? 0
     self.location = location
     self.maxSize = maxSize ?? 0
-    self.classId = classId
+    
     
   }
    
@@ -69,8 +70,8 @@ extension FitnessClass{
         intensity:Double(fitnessClassRepresentation.intensity),
         location: fitnessClassRepresentation.location,
         maxSize:Double(fitnessClassRepresentation.maxSize),
-        classId: Double(fitnessClassRepresentation.classId),
-        instructorName : fitnessClassRepresentation.instructorName
+        classId: fitnessClassRepresentation.classId ?? 222
+        
        )
         
         

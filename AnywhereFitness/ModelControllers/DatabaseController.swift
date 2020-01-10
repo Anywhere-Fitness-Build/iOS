@@ -166,6 +166,7 @@ class DatabaseController {
             do {
                 let fitnessClasses = try decoder.decode([FitnessClassRepresentation].self, from: data)
                 completion(fitnessClasses, nil)
+                
             } catch {
                 print("Error decoding")
                 completion(nil, error)

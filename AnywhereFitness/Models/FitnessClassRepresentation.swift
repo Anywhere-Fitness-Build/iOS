@@ -15,12 +15,12 @@ struct FitnessClassRepresentation: Codable, Equatable {
     var intensity: Int
     var location:String
     var maxSize: Int
-    var classId:Int
-    var instructorName:String 
+    var classId:Int?
+   
     //var instructorId:Int 
 }
 enum CodingKeys:String, CodingKey {
     case classId = "id"
-    case instructorName = "instructor_name"
+   
    // case instructorId = "instructor_id"
 }
