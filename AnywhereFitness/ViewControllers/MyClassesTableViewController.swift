@@ -55,14 +55,10 @@ class MyClassesTableViewController: UITableViewController {
     
      // Override to support editing the table view.
      override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-     if editingStyle == .delete {
-     // Delete the row from the data source
-     //tableView.deleteRows(at: [indexPath], with: .fade)
-        
+        if editingStyle == .delete {
         guard   let classSwipedToDelete = userController?.getClassesAttending()[indexPath.row] else {return}
         
         userController?.deleteClass(classSwipedToDelete)
-
         tableView.deleteRows(at:[indexPath], with: UITableView.RowAnimation.automatic)
         tableView.reloadData()
         
