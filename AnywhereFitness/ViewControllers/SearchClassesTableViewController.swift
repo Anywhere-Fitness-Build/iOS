@@ -10,6 +10,8 @@ import UIKit
 
 class SearchClassesTableViewController: UITableViewController {
 
+    @IBOutlet private weak var addClassBarButtton: UIBarButtonItem!
+
     var userController: UserController?
 
     override func viewWillAppear(_ animated: Bool) {
@@ -20,9 +22,18 @@ class SearchClassesTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        if isUserAnInstructor() {
+            self.navigationItem.rightBarButtonItem = addClassBarButtton
+        }
+        self.navigationItem.rightBarButtonItem = nil
     }
 
+    private func isUserAnInstructor() -> Bool {
+        guard let userController = userController,
+            let user = userController.getUser(),
+            let _ = user.isInstructor else { return false }
+        return true
+    }
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {

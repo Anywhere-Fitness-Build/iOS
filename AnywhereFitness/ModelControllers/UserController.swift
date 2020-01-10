@@ -174,12 +174,4 @@ class UserController {
             completion(nil)
         }.resume()
     }
-
-
-    func testForID(){
-        for classes in self.classes {
-            print( classes.id)
-        }
-    }
-
 }

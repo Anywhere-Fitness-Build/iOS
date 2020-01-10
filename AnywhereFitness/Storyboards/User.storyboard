@@ -107,6 +107,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="addClassBarButtton" destination="8FI-6D-kQH" id="Yid-aF-OMS"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uot-6z-Fr7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -192,7 +195,7 @@
                                     <outlet property="instructorLabel" destination="APi-xw-iXI" id="Wyv-cX-PlX"/>
                                     <outlet property="locationLabel" destination="1PO-lg-eaK" id="mTP-6b-pXo"/>
                                     <outlet property="titleLabel" destination="FJy-sm-NId" id="p3A-66-DKQ"/>
-                                    <segue destination="ube-iD-NeB" kind="show" identifier="ShowMyClassDetailSegue" trigger="accessoryAction" id="VAa-s2-xSo"/>
+                                    <segue destination="ube-iD-NeB" kind="show" identifier="ShowMyClassDetailSegue" id="6uw-LB-MoF"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -496,6 +499,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="51c-eL-r7M"/>
+        <segue reference="6uw-LB-MoF"/>
     </inferredMetricsTieBreakers>
 </document>

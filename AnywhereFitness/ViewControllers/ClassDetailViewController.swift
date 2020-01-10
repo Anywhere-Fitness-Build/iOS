@@ -75,8 +75,9 @@ class ClassDetailViewController: UIViewController, ClassDateViewControllerDelega
             }
             intensityPicker.selectRow(intensity - 1, inComponent: 0, animated: false)
             intensityLabelView(intensity: Double(intensity))
-            if isInstructor {
-                deleteClassButton.isHidden = false
+            if !isInstructor {
+                deleteClassButton.isHidden = true
+                self.navigationItem.rightBarButtonItem = nil
             }
             registerButton.setTitle("Sign Up for Class!", for: .normal)
 
