@@ -21,7 +21,7 @@ struct FitnessClassRequest: Codable {
         self.name = fitnessClassRep.name
         self.type = fitnessClassRep.type
         self.startTime = fitnessClassRep.startTime
-        self.duration = fitnessClassRep.startTime
+        self.duration = fitnessClassRep.duration
         self.intensity = fitnessClassRep.intensity
         self.location = fitnessClassRep.location
         self.maxSize = fitnessClassRep.maxSize

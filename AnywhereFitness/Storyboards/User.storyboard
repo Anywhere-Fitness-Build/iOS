@@ -365,7 +365,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xNv-pc-EjG">
-                                <rect key="frame" x="20" y="716.5" width="374" height="30"/>
+                                <rect key="frame" x="20" y="651.5" width="374" height="30"/>
                                 <state key="normal" title="Sign Up!"/>
                                 <connections>
                                     <action selector="registerButtonTapped" destination="ube-iD-NeB" eventType="touchUpInside" id="7cF-sh-wYU"/>
@@ -378,29 +378,46 @@
                                     <constraint firstAttribute="width" constant="160" id="W1y-Op-tbt"/>
                                 </constraints>
                             </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xWC-Tp-Gdy">
+                                <rect key="frame" x="20" y="696.5" width="374" height="30"/>
+                                <state key="normal" title="Delete Class"/>
+                                <connections>
+                                    <action selector="deleteClassButtonTappedWithSender:" destination="ube-iD-NeB" eventType="touchUpInside" id="diV-9m-KUK"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="xWC-Tp-Gdy" firstAttribute="leading" secondItem="xNv-pc-EjG" secondAttribute="leading" id="0MH-ec-dr6"/>
                             <constraint firstItem="Xnr-s0-WvT" firstAttribute="centerY" secondItem="2d7-nT-crK" secondAttribute="centerY" id="0qo-y5-Nem"/>
                             <constraint firstItem="xNv-pc-EjG" firstAttribute="leading" secondItem="2d7-nT-crK" secondAttribute="leading" id="AOg-Tf-tah"/>
                             <constraint firstItem="Xnr-s0-WvT" firstAttribute="leading" secondItem="2d7-nT-crK" secondAttribute="trailing" constant="29.5" id="Gm8-pF-zga"/>
                             <constraint firstItem="pSc-q9-4OM" firstAttribute="top" secondItem="SGy-My-oa4" secondAttribute="top" constant="10" id="L40-LO-klP"/>
+                            <constraint firstItem="xWC-Tp-Gdy" firstAttribute="trailing" secondItem="xNv-pc-EjG" secondAttribute="trailing" id="MfI-k8-0Wv"/>
                             <constraint firstItem="pSc-q9-4OM" firstAttribute="leading" secondItem="SGy-My-oa4" secondAttribute="leading" constant="20" id="Mq9-06-Njb"/>
                             <constraint firstItem="SGy-My-oa4" firstAttribute="trailing" secondItem="pSc-q9-4OM" secondAttribute="trailing" constant="20" id="XCL-c5-lkN"/>
                             <constraint firstItem="2d7-nT-crK" firstAttribute="top" secondItem="pSc-q9-4OM" secondAttribute="bottom" constant="47" id="egC-Pg-tWe"/>
                             <constraint firstItem="hxT-gK-rp1" firstAttribute="leading" relation="lessThanOrEqual" secondItem="Xnr-s0-WvT" secondAttribute="trailing" constant="8" symbolic="YES" id="ezW-hw-UIv"/>
                             <constraint firstItem="hxT-gK-rp1" firstAttribute="centerY" secondItem="2d7-nT-crK" secondAttribute="centerY" id="jX8-Dt-IaR"/>
+                            <constraint firstItem="xWC-Tp-Gdy" firstAttribute="top" secondItem="xNv-pc-EjG" secondAttribute="bottom" constant="15" id="sE5-SI-Pbn"/>
                             <constraint firstItem="xNv-pc-EjG" firstAttribute="trailing" secondItem="hxT-gK-rp1" secondAttribute="trailing" id="scn-3Y-HWF"/>
                             <constraint firstItem="2d7-nT-crK" firstAttribute="leading" secondItem="pSc-q9-4OM" secondAttribute="leading" id="vTW-T7-G5C"/>
-                            <constraint firstItem="xNv-pc-EjG" firstAttribute="top" secondItem="Xnr-s0-WvT" secondAttribute="bottom" constant="115" id="vpL-cQ-bgm"/>
+                            <constraint firstItem="xNv-pc-EjG" firstAttribute="top" secondItem="Xnr-s0-WvT" secondAttribute="bottom" constant="50" id="vpL-cQ-bgm"/>
                             <constraint firstItem="hxT-gK-rp1" firstAttribute="trailing" secondItem="pSc-q9-4OM" secondAttribute="trailing" id="wQb-zE-haj"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="SGy-My-oa4"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Class Detail" id="IQq-aL-dvF"/>
+                    <navigationItem key="navigationItem" title="Class Detail" id="IQq-aL-dvF">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="7XV-ds-MN1">
+                            <connections>
+                                <action selector="saveClassButtonTappedWithSender:" destination="ube-iD-NeB" id="ypU-Oa-Som"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="classNameTextField" destination="9g1-2B-f6N" id="HtH-AX-ZxU"/>
                         <outlet property="classTypeTextField" destination="R41-QI-xvI" id="AlT-mQ-2oa"/>
+                        <outlet property="deleteClassButton" destination="xWC-Tp-Gdy" id="SDD-xF-Qzg"/>
                         <outlet property="durationTextField" destination="QQt-TG-2TL" id="CoC-bX-xMM"/>
                         <outlet property="intensityLabel" destination="hxT-gK-rp1" id="wGQ-6x-idr"/>
                         <outlet property="intensityPicker" destination="Xnr-s0-WvT" id="Xjf-qY-8FQ"/>
@@ -408,6 +425,7 @@
                         <outlet property="registerButton" destination="xNv-pc-EjG" id="abq-Fk-JUG"/>
                         <outlet property="registeredUsersLabel" destination="mB3-aW-ICL" id="pdH-xQ-FNY"/>
                         <outlet property="registeredUsersTextField" destination="oy5-sT-VFB" id="TQl-PU-SkM"/>
+                        <outlet property="saveBarButtonItem" destination="7XV-ds-MN1" id="zz2-2F-TdV"/>
                         <outlet property="startTimeLabel" destination="mhJ-W8-5M3" id="y7I-9h-vHn"/>
                     </connections>
                 </viewController>

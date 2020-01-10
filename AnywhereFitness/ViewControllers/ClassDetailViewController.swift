@@ -26,7 +26,9 @@ class ClassDetailViewController: UIViewController, ClassDateViewControllerDelega
     @IBOutlet private weak var registeredUsersTextField: UITextField!
     @IBOutlet private weak var intensityPicker: UIPickerView!
     @IBOutlet private weak var registerButton: UIButton!
+    @IBOutlet private weak var deleteClassButton: UIButton!
     @IBOutlet private weak var intensityLabel: UILabel!
+    @IBOutlet private weak var saveBarButtonItem: UIBarButtonItem!
 
     // MARK: - Properties
     var userController: UserController?
@@ -53,8 +55,12 @@ class ClassDetailViewController: UIViewController, ClassDateViewControllerDelega
 
 
     private func updateViews() {
-        if let fitnessClass = fitnessClass {
+        if let fitnessClass = fitnessClass,
+            let userController = userController,
+            let user = userController.getUser(),
+            let isInstructor = user.isInstructor {
             self.navigationItem.title = fitnessClass.name
+            self.navigationItem.rightBarButtonItem = saveBarButtonItem
             classNameTextField.text = fitnessClass.name
             classTypeTextField.text = fitnessClass.type
             locationTextField.text = fitnessClass.location
@@ -69,11 +75,16 @@ class ClassDetailViewController: UIViewController, ClassDateViewControllerDelega
             }
             intensityPicker.selectRow(intensity - 1, inComponent: 0, animated: false)
             intensityLabelView(intensity: Double(intensity))
+            if isInstructor {
+                deleteClassButton.isHidden = false
+            }
             registerButton.setTitle("Sign Up for Class!", for: .normal)
-            // register button will change based on user
+
         } else {
             self.navigationItem.title = "Create a Class"
+            self.navigationItem.rightBarButtonItem = nil
             intensityLabelView(intensity: 1)
+            deleteClassButton.isHidden = true
         }
 
 
@@ -93,8 +104,54 @@ class ClassDetailViewController: UIViewController, ClassDateViewControllerDelega
     }
 
     @IBAction func registerButtonTapped() {
+        guard let userController = userController else { return }
+
+        if let fitnessClass = fitnessClass {
+            userController.joinAClass(fitnessClass)
+            DispatchQueue.main.async {
+                self.navigationController?.popViewController(animated: true)
+            }
+        } else {
+            if let newFitnessClass = createClassFromFields() {
+                userController.createFitnessClass(fitnessClass: newFitnessClass, completion: {
+                    DispatchQueue.main.async {
+                        self.navigationController?.popViewController(animated: true)
+                    }
+                })
+            }
+        }}
+
+    @IBAction func deleteClassButtonTapped(sender: UIButton) {
         guard let userController = userController,
-            let classNameString = classNameTextField.text,
+            let fitnessClass = fitnessClass else { return }
+        userController.deleteClassFromServer(fitnessClass) { error in
+            if let error = error {
+                print(error)
+            }
+            DispatchQueue.main.async {
+                self.navigationController?.popViewController(animated: true)
+            }
+        }
+    }
+
+    @IBAction func saveClassButtonTapped(sender: UIBarButtonItem) {
+        guard let userController = userController,
+            let newFitnessClass = createClassFromFields() else { return }
+
+        fitnessClass = userController.updateClass(for: fitnessClass!, with: newFitnessClass)
+        userController.updateServerClass(fitnessClass!, completion: { error in
+            if let error = error {
+                print(error)
+            }
+            DispatchQueue.main.async {
+                self.navigationController?.popViewController(animated: true)
+            }
+        })
+    }
+
+    private func createClassFromFields() -> FitnessClass? {
+
+        guard let classNameString = classNameTextField.text,
             !classNameString.isEmpty,
             let classTypeString = classTypeTextField.text,
             !classTypeString.isEmpty,
@@ -104,40 +161,21 @@ class ClassDetailViewController: UIViewController, ClassDateViewControllerDelega
             !durationString.isEmpty,
             let sizeString = registeredUsersTextField.text,
             !sizeString.isEmpty,
-            let startTimeString = startTimeLabel.text else { return }
+            let startTimeString = startTimeLabel.text else { return nil }
 
-            if let fitnessClass = fitnessClass {
-                userController.joinAClass(fitnessClass)
-                DispatchQueue.main.async {
-                    self.navigationController?.popViewController(animated: true)
-                }
-            } else {
-                let i = intensityPicker.selectedRow(inComponent: 0) + 1
-                let newfitnessClass = FitnessClass(name: classNameString,
-                                                classType: classTypeString,
-                                                startTime: startTimeString,
-                                                duration: durationString,
-                                                intensity: Double(i) ,
-                                                location: locationString,
-                                                maxSize: Double(sizeString))
-                                                
-                                    
-                                               
-                                              
-
-                userController.createFitnessClass(fitnessClass: newfitnessClass, completion: {
-                    DispatchQueue.main.async {
-                        self.navigationController?.popViewController(animated: true)
-                    }
-                })
-        }}
-        
-
+        let i = intensityPicker.selectedRow(inComponent: 0) + 1
+        return FitnessClass(name: classNameString,
+                            classType: classTypeString,
+                            startTime: startTimeString,
+                            duration: durationString,
+                            intensity: Double(i) ,
+                            location: locationString,
+                            maxSize: Double(sizeString))
+    }
 
     func saveDateButtonWasPressed(date: Date) {
         startTimeLabel.text = dateFormatter.string(from: date)
     }
-
 
     // MARK: - Navigation
 

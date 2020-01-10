@@ -93,7 +93,21 @@ class UserController {
         classesAttending.append(fitnessClass)
     }
 
-    func updateClass(_ fitnessClass: FitnessClassRepresentation, completion: @escaping (Error?) -> Void) {
+    func updateClass(for fitnessClassRep: FitnessClassRepresentation, with fitnessClass: FitnessClass) -> FitnessClassRepresentation {
+
+        guard let index = classes.firstIndex(of:fitnessClassRep) else { return fitnessClassRep }
+
+        classes[index].name = fitnessClass.name ?? ""
+        classes[index].type = fitnessClass.classType ?? ""
+        classes[index].startTime = fitnessClass.startTime ?? ""
+        classes[index].duration = fitnessClass.duration ?? ""
+        classes[index].intensity = Int(fitnessClass.intensity)
+        classes[index].location = fitnessClass.location ?? ""
+        classes[index].maxSize = Int(fitnessClass.maxSize)
+        return classes[index]
+    }
+    
+    func updateServerClass(_ fitnessClass: FitnessClassRepresentation, completion: @escaping (Error?) -> Void) {
 
         guard let token = DatabaseController.sharedDatabaseController.loginStruct?.token else { print ("putClass returning with either nill token or userID"); return }
 
@@ -123,6 +137,7 @@ class UserController {
                 completion(error)
                 return
             }
+            completion(nil)
         }.resume()
     }
 
