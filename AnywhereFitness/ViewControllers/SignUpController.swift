@@ -17,6 +17,10 @@ class SignUpController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
+        let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
+          backgroundImage.image = UIImage(named: "poly")
+        backgroundImage.contentMode = UIView.ContentMode.scaleAspectFill
+          self.view.insertSubview(backgroundImage, at: 0)
 
         // Do any additional setup after loading the view.
     }

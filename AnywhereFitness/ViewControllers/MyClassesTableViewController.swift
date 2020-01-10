@@ -15,10 +15,12 @@ class MyClassesTableViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         tableView?.reloadData()
+        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+       
         updateViews()
     }
 
@@ -40,6 +42,7 @@ class MyClassesTableViewController: UITableViewController {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "MyClassesCell", for: indexPath) as? ClassTableViewCell else { return UITableViewCell() }
 
         cell.fitnessClass = userController?.getClassAttending(indexPath.row)
+        cell.backgroundColor =  UIColor.clear
 
         return cell
     }
