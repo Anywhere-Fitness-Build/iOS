@@ -35,9 +35,9 @@ class UserController {
     // MARK: - CRUD Methods
     
     func createFitnessClass(fitnessClass:FitnessClass, completion: @escaping () -> Void) {
-       guard let token = DatabaseController.sharedDatabaseController.loginStruct?.token else { print ("putClass returning with either nill token or userID"); return }
+        guard let token = DatabaseController.sharedDatabaseController.loginStruct?.token else { print ("putClass returning with either nill token or userID"); return }
         
-     
+
         
         let requestURL = DatabaseController.sharedDatabaseController.createClassURL
         var request = URLRequest(url:requestURL)
@@ -93,16 +93,46 @@ class UserController {
         classesAttending.append(fitnessClass)
     }
 
-    func updateClass(_ fitnessClass: FitnessClass) {
+    func updateClass(_ fitnessClass: FitnessClassRepresentation, completion: @escaping (Error?) -> Void) {
 
+        guard let token = DatabaseController.sharedDatabaseController.loginStruct?.token else { print ("putClass returning with either nill token or userID"); return }
+
+        var requestURL = DatabaseController.sharedDatabaseController.createClassURL
+        requestURL.appendPathComponent("\(fitnessClass.id)")
+
+        var request = URLRequest(url: requestURL)
+        request.httpMethod = "PUT"
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue(token, forHTTPHeaderField: "Authorization")
+
+        do {
+            let jsonEncoder = JSONEncoder()
+            request.httpBody = try jsonEncoder.encode(fitnessClass)
+        } catch {
+            print("Error encoding class")
+            completion(error)
+            return
+        }
+
+        URLSession.shared.dataTask(with: request) { _, response, error in
+            if let response = response {
+                print(response)
+            }
+            if let _ = error {
+                print("Error")
+                completion(error)
+                return
+            }
+        }.resume()
     }
 
+
     func deleteClass(_ fitnessClassRep: FitnessClassRepresentation) {
-       //deletes a class that the user is attending from classesAttending. 
+        //deletes a class that the user is attending from classesAttending.
         guard let index = classesAttending.firstIndex(of:fitnessClassRep) else {print("returning nill out of deleteClass"); return}
         classesAttending.remove(at:index)
     }
-    
+
     func deleteClassFromServer(_ fitnessClassRep:FitnessClassRepresentation, completion: @escaping (Error?) -> Void){
 
         guard let token = DatabaseController.sharedDatabaseController.loginStruct?.token else { print ("putClass returning with either nill token or userID"); return }
@@ -129,6 +159,7 @@ class UserController {
             completion(nil)
         }.resume()
     }
+
 
     func testForID(){
         for classes in self.classes {
