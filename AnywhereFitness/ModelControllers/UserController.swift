@@ -31,17 +31,17 @@ class UserController {
     func getClass(_ index: Int) -> FitnessClassRepresentation { return classes[index] }
 
     func getClassAttending(_ index: Int) -> FitnessClassRepresentation { return classesAttending[index] }
-    
+
     // MARK: - CRUD Methods
     
-    func putClass(fitnessClass:FitnessClass, completion: @escaping () -> Void = {}) {
-       guard let token = DatabaseController.sharedDatabaseController.loginStruct?.token,
-        let userID = DatabaseController.sharedDatabaseController.roleID?.roleId else { print ("putClass returning with either nill token or userID"); return }
+    func createFitnessClass(fitnessClass:FitnessClass, completion: @escaping () -> Void) {
+       guard let token = DatabaseController.sharedDatabaseController.loginStruct?.token else { print ("putClass returning with either nill token or userID"); return }
         
         let requestURL = DatabaseController.sharedDatabaseController.createClassURL
         var request = URLRequest(url:requestURL)
-        request.httpMethod = "PUT"
-        request.setValue("\(token)", forHTTPHeaderField:"Authorization")
+        request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.setValue(token, forHTTPHeaderField: "Authorization")
         
         guard let fitnessClassRepresentation = fitnessClass.fitnessClassRepresentation
             else {
@@ -64,14 +64,15 @@ class UserController {
                 print("Error putting this class: \(error) line 60 UserController")
                 completion()
             }
+
+            self.classes.append(fitnessClassRepresentation)
+            completion()
         }.resume()
         
-        
-        
     }
-    
-    func createClass(_ fitnessClass: FitnessClassRepresentation) {
-        classes.append(fitnessClass)
+
+    func joinAClass(_ fitnessClass: FitnessClassRepresentation) {
+        classesAttending.append(fitnessClass)
     }
 
     func updateClass(_ fitnessClass: FitnessClass) {

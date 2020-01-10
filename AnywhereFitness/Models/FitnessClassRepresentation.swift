@@ -12,7 +12,7 @@ struct FitnessClassRepresentation: Codable {
     var type:String
     var startTime:String
     var duration:String
-    var intensity: Double
+    var intensity: Int
     var location:String
-    var maxSize:Double
+    var maxSize: Int
 }

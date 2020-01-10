@@ -10,5 +10,6 @@ import Foundation
 struct LoginStruct: Codable {
     var message:String
     var token:String
-    var id:Int 
+    var id:Int
+    var roleId: Int
 }

@@ -17,27 +17,33 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var instructorButton: UIButton!
 
-    private var isInstructor: Bool = false
     private var userController = UserController()
 
     override func viewDidLoad() {
         super.viewDidLoad()
     }
 
-
+    private func isUserAnInstructor() -> Bool {
+        let roleId = DatabaseController.sharedDatabaseController.loginStruct?.roleId
+        if let roleId = roleId {
+            return roleId % 2 == 0 ? true : false
+        }
+        return false
+    }
 
     @IBAction func loginTapped(sender: UIButton) {
         let username = usernameTextField.text!
         let password = passwordTextField.text!
 
         
-        let loginUser = UserRepresentation(username:username, password:password)
+        var loginUser = UserRepresentation(username:username, password:password)
         DatabaseController.sharedDatabaseController.signIn(with: loginUser){
             error in
             if let error = error {
                 print("Error occurred during sign up: \(error)")
                 return
             } else {
+                loginUser.isInstructor = self.isUserAnInstructor()
                 DatabaseController.sharedDatabaseController.getAllClasses { (data, error) in
                     if let error = error {
                         print("Error occurred getting all classes: \(error)")

@@ -22,7 +22,7 @@ extension FitnessClass{
      
    
      
-    return FitnessClassRepresentation(name:name, type:classType, startTime:startTime, duration:duration, intensity:intensity, location:location, maxSize:maxSize )
+    return FitnessClassRepresentation(name:name, type:classType, startTime:startTime, duration:duration, intensity:Int(intensity), location:location, maxSize:Int(maxSize) )
   }
   @discardableResult convenience init(name:String,
                     classType:String,
@@ -30,7 +30,7 @@ extension FitnessClass{
                     duration:String,
                     intensity:Double?,
                     location:String,
-                    maxSize:Double? = 0,
+                    maxSize:Double?,
                     context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
     self.init(context:context)
     self.name = name
@@ -50,9 +50,9 @@ extension FitnessClass{
         classType: fitnessClassRepresentation.type,
         startTime: fitnessClassRepresentation.startTime,
         duration:fitnessClassRepresentation.duration,
-        intensity:fitnessClassRepresentation.intensity,
+        intensity: Double(fitnessClassRepresentation.intensity),
         location:fitnessClassRepresentation.location,
-        maxSize:fitnessClassRepresentation.maxSize 
+        maxSize: Double(fitnessClassRepresentation.maxSize)
         
         
     )

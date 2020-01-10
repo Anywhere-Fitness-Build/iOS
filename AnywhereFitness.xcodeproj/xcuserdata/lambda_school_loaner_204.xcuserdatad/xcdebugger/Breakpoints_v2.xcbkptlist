@@ -87,32 +87,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "961ABDEF-9693-46BE-BD2E-DB486D816D74"
-            shouldBeEnabled = "No"
+            uuid = "5487B356-6640-4BC7-8292-EE30FE85B291"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "AnywhereFitness/ViewControllers/ClassDetailViewController.swift"
+            filePath = "AnywhereFitness/ViewControllers/LoginViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
-            landmarkName = "updateViews()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "A74C3917-954F-4C1A-BBB4-0027D56CB2DD"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "AnywhereFitness/ViewControllers/ClassDetailViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "64"
-            endingLineNumber = "64"
-            landmarkName = "updateViews()"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
+            landmarkName = "loginTapped(sender:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

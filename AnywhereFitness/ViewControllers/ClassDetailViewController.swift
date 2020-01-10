@@ -34,7 +34,7 @@ class ClassDetailViewController: UIViewController, ClassDateViewControllerDelega
 
     var dateFormatter: DateFormatter {
         let formatter = DateFormatter()
-        formatter.dateFormat = "MMM d, h:mm a"
+        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
         formatter.timeZone = TimeZone.autoupdatingCurrent
         return formatter
     }
@@ -54,20 +54,26 @@ class ClassDetailViewController: UIViewController, ClassDateViewControllerDelega
 
     private func updateViews() {
         if let fitnessClass = fitnessClass {
+            self.navigationItem.title = fitnessClass.name
             classNameTextField.text = fitnessClass.name
             classTypeTextField.text = fitnessClass.type
             locationTextField.text = fitnessClass.location
             durationTextField.text = fitnessClass.duration
             startTimeLabel.text = fitnessClass.startTime
-            registeredUsersLabel.text = "Regi"
+            registeredUsersTextField.text = String(fitnessClass.maxSize)
+            registeredUsersLabel.text = "Class Size"
 
             var intensity = abs(fitnessClass.intensity)
             if intensity > 10 {
                 intensity = intensity / 10
             }
-            intensityPicker.selectRow(Int(intensity - 1), inComponent: 0, animated: false)
-            intensityLabelView(intensity: intensity)
+            intensityPicker.selectRow(intensity - 1, inComponent: 0, animated: false)
+            intensityLabelView(intensity: Double(intensity))
+            registerButton.setTitle("Sign Up for Class!", for: .normal)
             // register button will change based on user
+        } else {
+            self.navigationItem.title = "Create a Class"
+            intensityLabelView(intensity: 1)
         }
 
 
@@ -96,21 +102,30 @@ class ClassDetailViewController: UIViewController, ClassDateViewControllerDelega
             !locationString.isEmpty,
             let durationString = durationTextField.text,
             !durationString.isEmpty,
+            let sizeString = registeredUsersTextField.text,
+            !sizeString.isEmpty,
             let startTimeString = startTimeLabel.text else { return }
 
+        if let fitnessClass = fitnessClass {
+            userController.joinAClass(fitnessClass)
+            DispatchQueue.main.async {
+                self.navigationController?.popViewController(animated: true)
+            }
+        } else {
+            let fitnessClass = FitnessClass(name: classNameString,
+                                            classType: classTypeString,
+                                            startTime: startTimeString,
+                                            duration: durationString,
+                                            intensity: Double(intensityPicker.selectedRow(inComponent: 0) + 1),
+                                            location: locationString,
+                                            maxSize: Double(sizeString))
 
-
-//        let newFitnessClass = FitnessClass(name: classNameString,
-//                             classType: classTypeString,
-//                             startTime: startTimeString,
-//                             duration: durationString,
-//                             intensity: Double(intensityPicker.selectedRow(inComponent: 0)),
-//                             location: locationString)
-//
-//        userController.createClass(newFitnessClass)
-
-        self.navigationController?.popViewController(animated: true)
-
+            userController.createFitnessClass(fitnessClass: fitnessClass, completion: {
+                DispatchQueue.main.async {
+                    self.navigationController?.popViewController(animated: true)
+                }
+            })
+        }
     }
 
     func saveDateButtonWasPressed(date: Date) {

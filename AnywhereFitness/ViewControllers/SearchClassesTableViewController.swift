@@ -14,6 +14,7 @@ class SearchClassesTableViewController: UITableViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        tableView?.reloadData()
         self.tabBarController?.tabBar.isHidden = false
     }
 
