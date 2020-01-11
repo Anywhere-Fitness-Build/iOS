@@ -24,8 +24,9 @@ class SearchClassesTableViewController: UITableViewController {
         super.viewDidLoad()
         if isUserAnInstructor() {
             self.navigationItem.rightBarButtonItem = addClassBarButtton
+        } else {
+            self.navigationItem.rightBarButtonItem = nil
         }
-        self.navigationItem.rightBarButtonItem = nil
     }
 
     private func isUserAnInstructor() -> Bool {

@@ -53,6 +53,72 @@ class AnywhereFitnessUITests: XCTestCase {
 
     }
 
+    func testAddClass() {
+        let app = XCUIApplication()
+
+        let usernameTextField = app.textFields["LoginViewController.usernameTextField"]
+        let passwordTextField = app.textFields["LoginViewController.passwordTextField"]
+        let loginButton = app.buttons["LoginViewController.loginButton"]
+
+        usernameTextField.tap()
+        usernameTextField.typeText("test")
+        passwordTextField.tap()
+        UIPasteboard.general.string = "password"
+        passwordTextField.doubleTap()
+        app.menuItems["Paste"].tap()
+
+        let title = app.navigationBars["Welcome test!"]
+        let exists = NSPredicate(format: "exists == true")
+        expectation(for: exists, evaluatedWith: title, handler: nil)
+
+        loginButton.tap()
+
+        waitForExpectations(timeout: 10, handler: nil)
+        XCTAssert(title.exists)
+
+        let searchTabBar = app.tabBars.buttons["Search"]
+        XCTAssert(searchTabBar.exists)
+        searchTabBar.tap()
+        let classesTitle = app.navigationBars["Classes"]
+        XCTAssert(classesTitle.exists)
+        app.navigationBars["Classes"].buttons["Add"].tap()
+        let addClassTitle = app.navigationBars["Create a Class"]
+        XCTAssert(addClassTitle.exists)
+        
+    }
+
+    func testClassTableView() {
+        let app = XCUIApplication()
+
+        let usernameTextField = app.textFields["LoginViewController.usernameTextField"]
+        let passwordTextField = app.textFields["LoginViewController.passwordTextField"]
+        let loginButton = app.buttons["LoginViewController.loginButton"]
+
+        usernameTextField.tap()
+        usernameTextField.typeText("test")
+        passwordTextField.tap()
+        UIPasteboard.general.string = "password"
+        passwordTextField.doubleTap()
+        app.menuItems["Paste"].tap()
+
+        let title = app.navigationBars["Welcome test!"]
+        let exists = NSPredicate(format: "exists == true")
+        expectation(for: exists, evaluatedWith: title, handler: nil)
+
+        loginButton.tap()
+
+        waitForExpectations(timeout: 10, handler: nil)
+        XCTAssert(title.exists)
+
+        let searchTabBar = app.tabBars.buttons["Search"]
+        XCTAssert(searchTabBar.exists)
+        searchTabBar.tap()
+        let classesTitle = app.navigationBars["Classes"]
+        XCTAssert(classesTitle.exists)
+        let tables = app.tables
+        XCTAssertTrue(tables.cells.count > 0)
+    }
+
     func testLaunchPerformance() {
         if #available(macOS 10.15, iOS 13.0, tvOS 13.0, *) {
             // This measures how long it takes to launch your application.
